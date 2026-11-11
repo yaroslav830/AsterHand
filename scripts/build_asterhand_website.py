@@ -22,7 +22,12 @@ def build(output):
     for name in ['index.html','styles.css','app.js','asterhand-mark.svg']:
         shutil.copyfile(source/name,output/name)
     images=ROOT/'docs/images'
-    for name in ['ios-agent-en.png','android-agent-en.png']:
+    for name in (
+        'ios-agent-en.png',
+        'android-agent-en.png',
+        'five-platforms-mcp-en.jpg',
+        'five-platforms-mcp-zh.jpg',
+    ):
         destination=output/'assets'/name;destination.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(images/name,destination)
     media_output = output / 'media'

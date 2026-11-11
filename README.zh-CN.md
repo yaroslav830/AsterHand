@@ -24,7 +24,7 @@ AsterHand 把已配对 Android 和兼容越狱 iOS 的 Root 授权工具带入�
 
 **Build 82 为预览版。** Android 与 iOS 显示版本为 1.0，Windows 保持 0.1 测试版，macOS 为 0.1.4，Linux 为 0.1.0。具体工具能力取决于操作系统和接收端权限。
 
-![Windows、Linux、macOS、iOS 与 Android 上的 AsterHand](docs/images/five-platforms-en.jpg)
+![AsterHand 五个平台的跨设备 Root 控制与本机 Agent 的 MCP 支持](docs/images/five-platforms-mcp-zh.jpg)
 
 ## 可以做什么
 
@@ -37,32 +37,28 @@ AsterHand 把已配对 Android 和兼容越狱 iOS 的 Root 授权工具带入�
 
 配对与权限分别管理。Root、ADB、辅助功能、屏幕录制和麦克风仍由接收端系统授权。系统悬浮窗、连续语音等功能因平台而异。
 
-## 四步开始
-
-1. **安装客户端。**点击页面顶部的平台按钮，按对应步骤安装。
-2. **连接 AI。**打开 **设置 → AI 连接**，完成 ChatGPT 授权，或填写自己的 OpenAI 兼容 HTTPS 接口和 API Key。保存后在 **模型与推理** 选择模型，先发一条消息测试连接。
-3. **配对设备。**在两端启用远程连接，确保设备在局域网内可以互通。通过搜索、配对码或 IP 发出申请。接收端核对请求后选择 **允许一次**、**始终允许** 或 **拒绝**。
-4. **执行第一个任务。**选择项目、对话和本机或已配对的执行设备。可以从“列出当前项目的文件，先不要修改内容”开始。发送触控或文字前先查看目标屏幕，并按需要在接收端授予屏幕和执行权限。
-
-搜不到设备时，检查两端是否开启远程连接、网络是否互通，以及应用是否拥有局域网权限。可以在远程连接设置中断开或撤销配对。
-
-项目和对话保存在设备本机；消息、附件和推理需要的工具结果会发送到所选 AI 服务。“本机 Agent”指在本机执行工具，不表示内置离线模型。
-
 ## 看看实际效果
 
 ### 产品介绍 · 26 秒
 
-![产品介绍动态预览](docs/images/asterhand-promo-zh.gif)
+<!-- Attach MP4: AsterHand-Five-Platforms-Promo-ZH-1080p.mp4 -->
 
 ### 一个 MCP 控制端，五个平台 · 26 秒
 
-![MCP 跨平台操控动态预览](docs/images/asterhand-mcp-demo-zh.gif)
+<!-- Attach MP4: AsterHand-Five-Platforms-MCP-Demo-ZH-1080p.mp4 -->
 
 演示依次展示已审阅的实机截图和实际命令返回结果。Windows 接收端为同一电脑上的隔离实例，Linux 运行在 VMware 中。
 
-<a name="选择你的平台"></a>
+## 反馈与发行
 
-## 平台项目
+[反馈问题](https://github.com/yaroslav830/AsterHand/issues)时请附客户端版本、系统、机型、复现步骤及已去除隐私的截图；不要上传密码、密钥或私有对话。
+
+安装包放在 Releases，与源码分支分别管理。AsterHand 源码仓库公开。公开可见的源码未被授予开源许可证，已有第三方许可证和声明继续有效，详见 [SOURCE_ONLY.md](SOURCE_ONLY.md)。
+
+<a name="选择你的平台"></a>
+<a name="平台项目"></a>
+
+## 安装与使用教程
 
 [Build 82 发布页](https://github.com/yaroslav830/AsterHand/releases/tag/v1.0-build82-monorepo)提供全部十个客户端文件的下载入口。请按系统、处理器或越狱环境选择。
 
@@ -72,7 +68,9 @@ AsterHand 把已配对 Android 和兼容越狱 iOS 的 Root 授权工具带入�
 
 - **安装包**　[安装版 EXE](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-Windows-Setup.exe) · [便携版 EXE](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-Windows.exe)
 
-运行 `AsterHand-Windows-Setup.exe` 安装到当前用户，或把 `AsterHand-Windows.exe` 放在一个文件夹中直接运行。原生客户端最低构建目标为 Windows 7 SP1，需要 .NET Framework 4.6.2 或更高版本；启动 Windows 客户端不需另装 Electron 或 Node.js。
+1. 确认系统为 Windows 7 SP1 或以上，并具备 .NET Framework 4.6.2 或更高版本。
+2. 使用安装版时，运行 `AsterHand-Windows-Setup.exe`，按提示安装到当前用户。使用便携版时，把 `AsterHand-Windows.exe` 放到单独的文件夹并直接打开。
+3. 启动客户端，配置 AI 并在本机发一条消息测试。把 Windows 用作 MCP 控制中心时，保持桌面客户端运行，并使用同一个系统用户启动 Agent。
 
 ### macOS
 
@@ -80,9 +78,9 @@ Intel / Apple 芯片桌面 Agent 与设备工具。
 
 - **安装包**　[Intel](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.4-macOS-Intel.zip) · [Apple 芯片](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.4-macOS-AppleSilicon.zip)
 
-Intel Mac 选择 Intel ZIP，Apple 芯片 Mac 选择 AppleSilicon ZIP。解压后把 AsterHand.app 移到准备存放应用的位置。
-
-Intel 版最低目标 macOS 10.15，Apple 芯片版为 macOS 11。这些预览包使用临时签名，尚未公证；若系统要求确认，请在常规“隐私与安全性”页面核对应用。使用屏幕工具需为此应用授予屏幕录制与辅助功能权限；应用签名变化后可能需要重新授权新版。
+1. 在 **关于本机** 中确认处理器。Intel Mac 选择 Intel ZIP，系统要求 macOS 10.15 或以上。Apple 芯片 Mac 选择 AppleSilicon ZIP，系统要求 macOS 11 或以上。
+2. 解压后将 `AsterHand.app` 移到“应用程序”并打开。预览包使用临时签名。系统要求确认时，可在 **隐私与安全性** 核对应用。
+3. 需要查看屏幕时，在 **隐私与安全性** 为 AsterHand 开启 **屏幕录制**。需要发送触控或输入时，开启 **辅助功能**。更新后如果应用签名变更，检查新版的授权状态。
 
 ### Linux
 
@@ -91,7 +89,7 @@ x64 / arm64 桌面工作区与设备工具。
 - **安装包**　[x64 / amd64 DEB](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.0-linux-amd64.deb) · [arm64 DEB](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.0-linux-arm64.deb)
 - **系统要求**　兼容的 Debian / Ubuntu 图形桌面；已在 VMware Ubuntu 24.04 x64 验证。
 
-先用 `uname -m` 确认架构。`x86_64` 选 amd64，`aarch64` 选 arm64。在兼容的 Debian 或 Ubuntu 图形桌面中执行以下命令。
+在兼容的 Debian 或 Ubuntu 图形桌面中打开终端。用 `uname -m` 确认架构，`x86_64` 选 amd64，`aarch64` 选 arm64。先进入下载 DEB 的目录，再执行安装和启动命令。
 
 ```sh
 sudo apt install ./AsterHand-0.1.0-linux-amd64.deb
@@ -106,9 +104,9 @@ arm64 将文件名换为 `AsterHand-0.1.0-linux-arm64.deb`。用普通用户运�
 
 - **安装包**　[APK](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-1.0-Android.apk)
 
-使用系统安装器安装 `AsterHand-1.0-Android.apk`。最低构建目标 Android 6.0，当前 APK 使用开发签名。
-
-在应用中选择普通用户、ADB 或 Root。普通模式的屏幕助手需相应的辅助功能和系统授权；ADB 需调试授权；Root 需在设备已有的 Root 管理器中允许。仅打开应用不要求 Root。
+1. 用系统安装器打开 `AsterHand-1.0-Android.apk` 并完成安装。最低构建目标为 Android 6.0，APK 使用开发签名。
+2. 打开 **设置 → 权限等级**，按需选择普通用户、ADB 或 Root。可先从普通用户开始。使用普通模式的屏幕助手时，在系统设置中开启 AsterHand 辅助功能。该模式下，手势需要 Android 7 或以上，截图需要 Android 11 或以上。
+3. 使用 ADB 时，从已授权的电脑完成调试激活，然后回到应用确认执行等级。使用 Root 时，在设备已有的 Root 管理器中批准请求。根据用途开启独立的 AI 屏幕控制或远程屏幕权限。
 
 ### iOS
 
@@ -143,7 +141,7 @@ Procursus Rootful 使用统一地址，并保留当前越狱环境的 OpenSSH。
 | Rootless | `AsterHand-1.0-Rootless.deb` | iOS 15 |
 | RootHide | `AsterHand-1.0-RootHide.deb` | iOS 15 |
 
-用越狱包管理器打开对应 DEB，并由包管理器处理依赖。三个包均声明 OpenSSH 依赖，需要匹配的越狱环境，不支持未越狱 iOS。
+用越狱包管理器打开对应 DEB，并由包管理器处理依赖。三个包均声明 OpenSSH 依赖。安装后打开 AsterHand 并连接 AI 服务。在 **设置 → 权限与执行** 中检查本机 Root 和 AI 屏幕控制的独立开关。远程屏幕权限在 **远程连接** 中管理。
 
 ### MCP
 
@@ -158,7 +156,17 @@ Procursus Rootful 使用统一地址，并保留当前越狱环境的 OpenSSH。
    python scripts/install_asterhand_mcp.py
    ```
 
-3. 重新打开 Codex 会话，调用 `devices_list` 列出设备。用 `device_info` 核对配对设备的准确标识，再用 `screenshot` 检查目标屏幕。接收端的屏幕、ADB 和 Root 权限由设备所有者授权。
+3. 在终端运行 `codex mcp list`，确认列表中有 `asterhand`。保持桌面客户端运行，然后新建 Codex 会话加载工具。
+4. 调用 `devices_list` 查看设备。用 `device_info` 核对配对设备的准确标识，再用 `screenshot` 查看目标屏幕。需要交互时，先核对接收端的屏幕和执行权限。
+
+安装器未找到 pnpm 时，可在仓库根目录安装锁定的依赖，再重新运行安装器。
+
+```sh
+pnpm --dir mcp install --frozen-lockfile --ignore-scripts
+python scripts/install_asterhand_mcp.py --skip-dependencies
+```
+
+如果使用其他 MCP 客户端，在客户端中配置本机 stdio 服务。命令填写 Node.js 的绝对路径，参数填写 `mcp/server.mjs` 的绝对路径，并把环境变量 `ASTERHAND_HOME` 设为本仓库的绝对路径。
 
 你可以从“列出已配对的 AsterHand 设备，告诉我哪些设备在线”开始。
 
@@ -179,8 +187,28 @@ sha256sum AsterHand-0.1.0-linux-amd64.deb
 
 最低系统版本是构建目标，不代表所有机型与系统组合均已验证。预览版限制见发布说明，在接收端开启实际需要的工具权限即可。
 
-## 反馈与发行
+### 四步开始
 
-[反馈问题](https://github.com/yaroslav830/AsterHand/issues)时请附客户端版本、系统、机型、复现步骤及已去除隐私的截图；不要上传密码、密钥或私有对话。
+1. **安装客户端。** 点击本页顶部的平台按钮，按系统、处理器和越狱环境选择安装包。完成安装后打开 AsterHand。
+2. **连接 AI。** 打开 **设置 → AI 连接**。选择 ChatGPT 登录并在授权页面完成操作，或填写兼容服务商提供的 HTTPS 地址和 API Key。保存后进入 **模型与推理**，获取可用模型，选择模型或填写模型 ID，再发一条简单消息测试。
+3. **新建项目和对话。** 从首页进入项目管理，新建或选择项目，再打开对话并选择执行设备。模型和服务支持时，可通过附件按钮选择图片或文件。先在本机试一句“列出当前项目的文件，先不要修改内容”。
+4. **配对并使用另一台设备。** 按下面的步骤完成配对，将执行目标切换到对应设备。发送触控或文字前，先查看屏幕确认目标。屏幕、ADB 或 Root 权限按需要在接收端单独授予。
 
-安装包放在 Releases，与源码分支分别管理。AsterHand 源码仓库公开。公开可见的源码未被授予开源许可证，已有第三方许可证和声明继续有效，详见 [SOURCE_ONLY.md](SOURCE_ONLY.md)。
+### 配对手机与电脑
+
+1. 在两台设备上打开 AsterHand，在 **设置 → 远程连接** 中启用服务，确保设备之间网络互通。
+2. 在控制端搜索接收设备。未找到时，可输入配对码或接收端 IP 发起请求。在接收端检查请求，确认发起方身份。
+3. 临时操作选 **允许一次**，需长期使用可选 **始终允许**。遇到未知请求时选 **拒绝**。之后可在远程连接设置中断开会话或撤销配对。
+4. 进入已配对设备页面，先试着查看截图并核对目标屏幕。屏幕输入、文件、终端和高权限工具由接收端单独授权。遇到操作确认时，先查看任务内容再决定是否放行。
+
+项目和对话保存在设备本机，消息、附件和推理需要的工具结果会发送到所选 AI 服务。停止任务会中止后续操作，已完成的操作仍然有效。
+
+### 常见问题
+
+| 现象 | 排查方法 |
+| --- | --- |
+| ChatGPT 登录或加载模型失败 | 检查网络和账号状态，再打开授权页重新选择账户或工作区。使用兼容 API 时，核对 HTTPS 地址、模型 ID 和密钥的模型权限。 |
+| 搜不到另一台设备 | 在接收端打开 AsterHand，确认远程连接服务已开启，应用拥有局域网访问权限。检查两端能否互通，再尝试输入配对码或 IP。 |
+| 配对成功但无法截图或输入 | 检查接收端的屏幕权限和执行等级。macOS 检查屏幕录制和辅助功能，Android 检查执行等级和远程屏幕开关，iOS 在远程连接设置中检查远程屏幕权限。 |
+| 休眠或重启后服务中断 | 回到接收端应用检查服务状态。需要继续中断的任务时，先核对当前设备状态，再手动继续。 |
+| MCP 已启动但看不到接收端 | 保持桌面控制中心运行，确认它与 MCP 客户端使用同一个系统用户。检查应用中的配对列表，再打开新的 Agent 会话。 |

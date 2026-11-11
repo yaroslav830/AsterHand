@@ -104,11 +104,6 @@ html[lang=zh-CN] h1{font-size:clamp(58px,5.3vw,80px);line-height:1.13;letter-spa
 .apt-addresses dd {
   margin: 0;
 }
-.mcp-install {
-  grid-column: 1 / -1;
-  min-width: 0;
-  margin-top: 0;
-}
 .download-verification {
   margin-top: 32px;
 }
@@ -117,7 +112,31 @@ html[lang=zh-CN] h1{font-size:clamp(58px,5.3vw,80px);line-height:1.13;letter-spa
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
-  .mcp-install {
-    margin-top: 20px;
-  }
+}
+
+.product-art {
+  margin: 28px 0 0;
+  border: 1px solid var(--line);
+}
+.product-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1672 / 876;
+  height: auto;
+}
+.tutorial-steps {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+  padding-left: 1.5rem;
+}
+.tutorial-steps li {
+  padding-left: 0.35rem;
+}
+.tutorial-steps h3 {
+  margin: 0 0 0.25rem;
+}
+.tutorial-steps p {
+  margin: 0;
+  color: var(--muted);
 }

@@ -60,6 +60,7 @@
         <article class="feature-lead"><div class="feature-symbol" aria-hidden="true">↗</div><div><span class="feature-kicker" data-i18n="product.rootLabel">CROSS-DEVICE ROOT</span><h3 data-i18n="product.rootTitle">Reach the tools<br>behind the screen.</h3><p data-i18n="product.rootBody">Use Root-enabled commands, files and system tools on a paired Android or compatible jailbroken iOS device. Screen viewing and input complete the workflow.</p></div><div class="route"><span>WINDOWS / MCP</span><span class="route-line" aria-hidden="true">⟷</span><span>ANDROID / iOS</span></div></article>
         <div class="feature-details"><article><span class="feature-number">01</span><div><h3 data-i18n="product.localTitle">An agent, right on the device.</h3><p data-i18n="product.localBody">Keep projects and conversations on your phone or PC. Your selected AI service reasons about the task; the local agent executes through available device tools.</p></div></article><article><span class="feature-number">02</span><div><h3 data-i18n="product.pairTitle">Pair once. Choose your target.</h3><p data-i18n="product.pairBody">Discover devices on a reachable LAN, verify pairing details and approve the connection. Encrypted pairings connect your controllers and receivers.</p></div></article><article><span class="feature-number">03</span><div><h3 data-i18n="product.permissionsTitle">Permissions stay with the receiver.</h3><p data-i18n="product.permissionsBody">Root, ADB, AI screen access and remote screen access have their own grants. Pairing a device does not turn those permissions on.</p></div></article></div>
       </div>
+      <figure class="product-art"><img id="product-art" src="assets/five-platforms-mcp-en.jpg" alt="AsterHand local device Agent and MCP support across Windows, macOS, Linux, iOS and Android" width="1672" height="876" loading="lazy" decoding="async"></figure>
     </section>
 
     <section class="demo section-shell section-space" id="demo">
@@ -67,16 +68,36 @@
       <div class="video-layout"><article class="video-primary"><div class="video-heading"><span class="mono" data-i18n="demo.rootLabel">CODEX + MCP / FIVE PLATFORMS</span><span>00:26</span></div><video id="root-video" controls playsinline preload="metadata" aria-label="Five-platform MCP demonstration"><source src="media/AsterHand-Five-Platforms-MCP-Demo-EN-1080p.mp4?v=en-20261104" type="video/mp4"></video><div class="video-caption"><h3 data-i18n="demo.rootTitle">One controller. Five platforms.</h3><p data-i18n="demo.rootBody">One Windows controller reached Windows, Linux, macOS, iOS and Android in the same MCP session. The Windows receiver was isolated on the same PC; Linux ran in VMware.</p><p class="micro" data-i18n="demo.recording">The video uses reviewed device screenshots and the actual shell results, in sequence. Screenshot text has been translated for this English presentation.</p></div></article><article class="video-secondary"><div class="video-heading"><span class="mono" data-i18n="demo.overviewLabel">MEET ASTERHAND</span><span>00:26</span></div><video id="overview-video" controls playsinline preload="metadata" aria-label="AsterHand product overview"><source src="media/AsterHand-Five-Platforms-Promo-EN-1080p.mp4?v=en-20261104" type="video/mp4"></video><div class="video-caption"><h3 data-i18n="demo.overviewTitle">A closer look at AsterHand.</h3><p data-i18n="demo.overviewBody">AsterHand brings a shared device protocol, local agents, and MCP tools to desktop and mobile.</p></div></article></div>
     </section>
 
+    <section class="mcp-section section-shell section-space">
+      <div class="mcp-copy"><p class="eyebrow" data-i18n="mcp.eyebrow">ASTERHAND MCP</p><h2 data-i18n="mcp.title">Give your assistant<br>a device toolkit.</h2><p data-i18n="mcp.body">Connect Codex or another MCP-compatible assistant to your paired devices. Inspect a screen, work with files and terminals, or delegate a task to the phone agent.</p><div class="mcp-note"><span class="mono">22</span><span data-i18n="mcp.count">MCP tools · existing receiver permissions</span></div></div>
+      <div class="mcp-panel"><div class="panel-bar"><span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>ASTERHAND / MCP</span><span data-i18n="mcp.example">EXAMPLE REQUEST</span></div><div class="assistant-request"><span class="request-icon" aria-hidden="true">✳</span><p data-i18n="mcp.prompt">“Find my paired phone, inspect its screen, then list the files in my project.”</p></div><ol class="tool-flow"><li><span class="tool-dot" aria-hidden="true"></span><code>devices_list</code><span data-i18n="mcp.step1">Select the exact paired device</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>screenshot</code><span data-i18n="mcp.step2">Inspect the current screen</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>files / terminal</code><span data-i18n="mcp.step3">Use the tools the receiver permits</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>device agent</code><span data-i18n="mcp.step4">Delegate and follow task progress</span></li></ol></div>
+
+    </section>
+
+    <section class="closing section-shell"><p class="eyebrow">ASTERHAND</p><h2 data-i18n="closing.title">Your devices.<br>Working together.</h2><div><a class="button button-primary" href="#platforms"><span data-i18n="hero.download">Get AsterHand</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/yaroslav830/AsterHand"><span data-i18n="closing.github">Explore the project</span> ↗</a></div></section>
+    <section class="guide section-shell section-space" id="guide">
+      <div class="section-heading"><h2 data-i18n="guide.title">Installation and usage tutorial</h2><p data-i18n="guide.intro">Install the client for your platform, connect your AI service, then test a local task or pair another device.</p></div>
+      <ol class="tutorial-steps">
+        <li><h3 data-i18n="guide.installTitle">Install a client</h3><p data-i18n="guide.installBody">Use the platform instructions below to choose the package for your system. Open AsterHand, then check the operating system grants shown in Settings.</p></li>
+        <li><h3 data-i18n="guide.aiTitle">Connect your AI service</h3><p data-i18n="guide.aiBody">Open Settings → AI Connection. For ChatGPT, complete sign-in in the authorization window. For a compatible API, enter your HTTPS service address and API key. Save the connection, open Model &amp; Reasoning, choose an available model and send a short test message.</p></li>
+        <li><h3 data-i18n="guide.pairTitle">Pair a receiver</h3><p data-i18n="guide.pairBody">Enable Remote Connections on both clients and make sure they can reach one another. Search for the receiver, enter a pairing code or send a request to its IP address. On the receiver, verify the device identity and select Allow once, Always allow, or Reject.</p></li>
+        <li><h3 data-i18n="guide.permissionsTitle">Set receiver permissions</h3><p data-i18n="guide.permissionsBody">Grant screen, Accessibility, ADB or Root only for the tools you plan to use. On Android, the permission level determines which tools run. On iOS, local AI screen access and remote screen access have separate controls.</p></li>
+        <li><h3 data-i18n="guide.taskTitle">Run a first task</h3><p data-i18n="guide.taskBody">Select a project, conversation and execution target. Start with “List the files in this project without changing anything.” Check which device handled the task and review its result. Inspect the target screen before sending touch or keyboard input.</p></li>
+      </ol>
+      <div class="guide-footer"><p data-i18n="guide.troubleshoot">If discovery does not find the receiver, check both clients’ Remote Connections settings and local-network permissions. Try a pairing code or the receiver’s IP address on the same reachable network. If a tool is denied, review its specific permission on the receiver before retrying.</p></div>
+    </section>
+
     <section class="platforms section-shell section-space" id="platforms">
-      <div class="section-heading section-heading-row"><div><p class="eyebrow" data-i18n="platform.eyebrow">03 / INSTALLATION GUIDES</p><h2 data-i18n="platform.title">Install AsterHand</h2></div><p data-i18n="platform.intro">Find downloads, system requirements and installation steps for your device.</p></div>
+      <div class="section-heading section-heading-row"><div><p class="eyebrow" data-i18n="platform.eyebrow">PLATFORM INSTALLATION</p><h2 data-i18n="platform.title">Install AsterHand</h2></div><p data-i18n="platform.intro">Choose your operating system, processor or jailbreak environment. The steps below include the checks to make before you pair a device.</p></div>
       <div class="platform-guides">
         <article class="platform-card platform-guide" id="windows" aria-labelledby="windows-title">
           <h3 id="windows-title">Windows</h3>
             <p data-i18n="windows.requirements" class="guide-requirements">0.1 testing · Windows 7 SP1 or later · .NET Framework 4.6.2 or later</p>
           <div class="platform-guide-body">
             <ol class="install-steps">
-              <li data-i18n="windows.install1">Run <code>AsterHand-Windows-Setup.exe</code> to install for your user account. For the portable version, save <code>AsterHand-Windows.exe</code> in a folder and run it there.</li>
+              <li data-i18n="windows.install1">Run <code>AsterHand-Windows-Setup.exe</code> to install for your Windows account, then open AsterHand. For the portable version, save <code>AsterHand-Windows.exe</code> in a folder you can write to and run it there.</li>
               <li data-i18n="windows.install2">Open AsterHand. Configure your AI connection in Settings, then use Remote connections to discover or pair a receiver.</li>
+              <li data-i18n="windows.check">If the app fails to launch, check that the system has .NET Framework 4.6.2 or newer. If the app opens but a paired receiver cannot be reached, check Remote connections on both devices and confirm the local network allows them to communicate.</li>
             </ol>
             <div class="package-links">
               <a class="button button-platform" href="https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-Windows-Setup.exe"><span data-i18n="windows.installer">Download installer</span></a>
@@ -89,8 +110,9 @@
             <p data-i18n="macos.requirements" class="guide-requirements">0.1.4 preview · Intel: macOS 10.15+ · Apple silicon: macOS 11+</p>
           <div class="platform-guide-body">
             <ol class="install-steps">
-              <li data-i18n="macos.install1">Choose the ZIP for your Mac’s processor, unzip it, then move <code>AsterHand.app</code> to Applications and open it.</li>
+              <li data-i18n="macos.install1">Open Apple menu → About This Mac to check the processor. Download the matching ZIP, extract it, move <code>AsterHand.app</code> to Applications, then open it there.</li>
               <li data-i18n="macos.install2">The preview uses ad hoc signing. If macOS asks you to review the app, open System Settings → Privacy &amp; Security. For screen viewing and control, grant Screen Recording and Accessibility as needed. A new build may require these grants again.</li>
+              <li data-i18n="macos.check">Return to AsterHand after granting permissions. Open Settings and check the permission state before testing a local screenshot. If macOS asks you to quit and reopen the app, do so before testing.</li>
             </ol>
             <div class="package-links">
               <a class="button button-platform" href="https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.4-macOS-Intel.zip"><span data-i18n="macos.intel">Download Intel ZIP</span></a>
@@ -106,6 +128,7 @@
               <li data-i18n="linux.install1">Run <code>uname -m</code> to check your processor. Use amd64 for <code>x86_64</code> and arm64 for <code>aarch64</code>.</li>
               <li data-i18n="linux.install2">Install the DEB using your package manager, or run the command below from the download directory. Open the GUI as your regular user.</li>
               <li data-i18n="linux.install3">X11 local input uses <code>xdotool</code>. Wayland currently lacks local input injection, and screen capture may show a system sharing prompt. A paired phone uses its own input permissions.</li>
+              <li data-i18n="linux.check">If the app opens but you cannot take a Wayland screenshot, make sure PipeWire, <code>xdg-desktop-portal</code> and your desktop’s portal backend are running. Choose the screen or window when the desktop asks what to share.</li>
             </ol>
             <div class="package-links">
               <a class="button button-platform" href="https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.0-linux-amd64.deb"><span data-i18n="linux.amd64">Download amd64 DEB</span></a>
@@ -125,6 +148,7 @@ asterhand</code></pre>
             <ol class="install-steps">
               <li data-i18n="android.install1">Download <code>AsterHand-1.0-Android.apk</code>, then open it with the Android package installer.</li>
               <li data-i18n="android.install2">Choose Standard, ADB or Root in AsterHand. Standard mode needs applicable screen and accessibility permissions. ADB needs authorized debugging. For Root mode, approve the request in your device’s existing Root manager.</li>
+              <li data-i18n="android.check">Test a read-only action at the chosen permission level. If the receiver is paired but screen tools are unavailable, check the applicable screen permission on the phone and the remote screen setting in AsterHand.</li>
             </ol>
             <div class="package-links">
               <a class="button button-platform" href="https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-1.0-Android.apk"><span data-i18n="android.apk">Download APK</span></a>
@@ -136,8 +160,9 @@ asterhand</code></pre>
             <p data-i18n="ios.requirements" class="guide-requirements">1.0 preview · Compatible jailbreak required · Rootful iOS 14+ · Rootless and RootHide iOS 15+</p>
           <div class="platform-guide-body">
             <ol class="install-steps">
-              <li data-i18n="ios.install1">For manual installation, choose the DEB for your active jailbreak environment. Open it in the package manager and review the installation queue. The packages declare an OpenSSH dependency.</li>
+              <li data-i18n="ios.install1">For manual installation, choose the DEB for your active jailbreak environment. Open it in Sileo or Zebra, review the queue, then confirm installation. All three packages declare OpenSSH as a dependency.</li>
               <li data-i18n="ios.install2">Open AsterHand, connect your AI service and enable the screen and Root permissions you intend to use.</li>
+              <li data-i18n="ios.check">If the package manager reports a firmware or architecture mismatch, check the architecture below and use the package for the current bootstrap. Use the package manager to review any unresolved dependencies before proceeding.</li>
             </ol>
             <div class="package-links">
               <a class="button button-platform" href="https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-1.0-Rootful.deb"><span data-i18n="ios.rootful">Download Rootful DEB</span></a>
@@ -150,7 +175,7 @@ asterhand</code></pre>
             <ol class="install-steps">
               <li data-i18n="ios.apt1">Run <code>dpkg --print-architecture</code> in a terminal on the device to check your jailbreak environment.</li>
               <li data-i18n="ios.apt2">In Sileo or Zebra, open Sources → Add Source and paste the matching address below.</li>
-              <li data-i18n="ios.apt3">Refresh sources, search for AsterHand, review the installation queue, and confirm. Refresh again when checking for an update.</li>
+              <li data-i18n="ios.apt3">Refresh sources, search for AsterHand, and review the package and OpenSSH dependency in the queue. Confirm installation, then launch the app. To check for an upgrade later, refresh the source again.</li>
             </ol>
             <dl class="apt-addresses">
               <div><dt>Rootful / Elucubratus <code>iphoneos-arm</code></dt><dd><code>https://yaroslav830.github.io/AsterHand/ios-apt/rootful/</code></dd></div>
@@ -171,30 +196,23 @@ asterhand</code></pre>
       </section>
     </section>
 
-    <section class="mcp-section section-shell section-space" id="mcp">
-      <div class="mcp-copy"><p class="eyebrow" data-i18n="mcp.eyebrow">04 / ASTERHAND MCP</p><h2 data-i18n="mcp.title">Give your assistant<br>a device toolkit.</h2><p data-i18n="mcp.body">Connect Codex or another MCP-compatible assistant to your paired devices. Inspect a screen, work with files and terminals, or delegate a task to the phone agent.</p><div class="mcp-note"><span class="mono">22</span><span data-i18n="mcp.count">MCP tools · existing receiver permissions</span></div></div>
-      <div class="mcp-panel"><div class="panel-bar"><span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>ASTERHAND / MCP</span><span data-i18n="mcp.example">EXAMPLE REQUEST</span></div><div class="assistant-request"><span class="request-icon" aria-hidden="true">✳</span><p data-i18n="mcp.prompt">“Find my paired phone, inspect its screen, then list the files in my project.”</p></div><ol class="tool-flow"><li><span class="tool-dot" aria-hidden="true"></span><code>devices_list</code><span data-i18n="mcp.step1">Select the exact paired device</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>screenshot</code><span data-i18n="mcp.step2">Inspect the current screen</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>files / terminal</code><span data-i18n="mcp.step3">Use the tools the receiver permits</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>device agent</code><span data-i18n="mcp.step4">Delegate and follow task progress</span></li></ol></div>
-      <div class="guide-subsection mcp-install">
-        <h3 data-i18n="mcp.installTitle">Set up AsterHand MCP</h3>
+    <section class="tutorial-mcp section-shell section-space" id="mcp">
+      <div class="section-heading"><h2 data-i18n="mcp.installTitle">Set up and test AsterHand MCP</h2><p data-i18n="mcp.guideIntro">MCP connects through the AsterHand control center on Windows, macOS or Linux and can use Android and iOS receivers you have paired. Start AsterHand and verify the receiver is online first.</p></div>
+      <div class="guide-subsection">
         <ol class="install-steps">
-              <li data-i18n="mcp.install1">Keep the AsterHand control center open on Windows, macOS or Linux. Pair any Android or iOS receivers you plan to use.</li>
-              <li data-i18n="mcp.install2">Install Node.js 20+, Python 3.11+, pnpm and the Codex CLI. Open a terminal at the root of the AsterHand repository and run the command below.</li>
-              <li data-i18n="mcp.install3">Open a new Codex conversation after the installer registers <code>asterhand</code>. Ask it to call <code>devices_list</code>, select the exact paired device, and inspect its screen before sending input. Check the result on the device.</li>
+          <li data-i18n="mcp.install1">For a source install, prepare Node.js 20+, Python 3.11+, pnpm and the Codex CLI. Run the commands below to clone and install, or run only the final command from an existing repository root. The installer registers <code>asterhand</code> and keeps your other MCP entries.</li>
+          <li data-i18n="mcp.install2">With the packaged Mac app, you can use its bundled installer. In Finder, choose Show Package Contents on AsterHand.app, open Contents → Resources, and run <code>Install Codex MCP.command</code>.</li>
+          <li data-i18n="mcp.install3">Open a new Codex conversation and ask it to call <code>devices_list</code>. Verify the exact device with <code>device_info</code> and use <code>screenshot</code> to inspect the screen. Start with a read-only task and check the result on the device.</li>
+          <li data-i18n="mcp.install4">If the tool is missing, check that Codex registered <code>asterhand</code> and reopen the conversation. If the tool is listed but the receiver is offline, check that the desktop control center is open and the existing pairing is reachable.</li>
         </ol>
-        <pre><code>python scripts/install_asterhand_mcp.py</code></pre>
-        <p data-i18n="mcp.installNote">MCP uses the desktop app’s local connection and existing device pairings. Root, ADB and screen tools still require the receiver’s permission.</p>
+        <pre><code>git clone https://github.com/yaroslav830/AsterHand.git
+cd AsterHand
+python scripts/install_asterhand_mcp.py</code></pre>
+        <p data-i18n="mcp.installNote">Screen, ADB and Root access still follow the receiving device’s permissions.</p>
       </div>
     </section>
 
-    <section class="guide section-shell section-space" id="guide">
-      <div class="section-heading"><p class="eyebrow" data-i18n="guide.eyebrow">05 / YOUR FIRST WORKFLOW</p><h2 data-i18n="guide.title">A few steps.<br>Then make it yours.</h2></div>
-      <ol class="guide-steps"><li><span class="step-index">01</span><h3 data-i18n="guide.s1title">Install your client</h3><p data-i18n="guide.s1">Choose Windows, macOS, Linux, Android, or the iOS package for your jailbreak.</p><a href="#platforms" data-i18n="guide.downloads">Choose a download ↑</a></li><li><span class="step-index">02</span><h3 data-i18n="guide.s2title">Connect your AI service</h3><p data-i18n="guide.s2">Open Settings → AI connection. Sign in yourself or enter your own API endpoint and key, select a model, then send a simple test message.</p></li><li><span class="step-index">03</span><h3 data-i18n="guide.s3title">Authorize device tools</h3><p data-i18n="guide.s3">Enable the Root, ADB and screen capabilities you need on the receiving device. Each capability follows its own system permissions.</p></li><li><span class="step-index">04</span><h3 data-i18n="guide.s4title">Pair. Inspect. Execute.</h3><p data-i18n="guide.s4">Enable Remote connections on a reachable LAN. Discover the receiver or enter its pairing code or IP address. Check the device identity on the receiver and choose Allow once, Always allow, or Reject. Once paired, select that device, inspect its screen, and check the result after running a task.</p></li></ol>
-      <div class="guide-footer"><p data-i18n="guide.example">A good first request: “List the files in this project without changing anything.”</p></div>
-    </section>
-
     <section class="faq section-shell section-space" id="faq"><div class="section-heading"><p class="eyebrow" data-i18n="faq.eyebrow">A FEW THINGS TO KNOW</p><h2 data-i18n="faq.title">Before you connect.</h2></div><div class="faq-list"><details><summary data-i18n="faq.q1">Does AsterHand root or jailbreak my device?</summary><p data-i18n="faq.a1">No. It uses Root, ADB, jailbreak helpers and screen capabilities that you have already enabled and authorized. AsterHand does not perform a jailbreak or grant those permissions by pairing.</p></details><details><summary data-i18n="faq.q2">Does “local agent” include an offline AI model?</summary><p data-i18n="faq.a2">The agent executes tools on your device. Model inference comes from the AI service you select; an offline model is not bundled. Messages, attachments and tool results needed for inference are sent to that selected service.</p></details><details><summary data-i18n="faq.q3">Which iOS build should I install?</summary><p data-i18n="faq.a3">Check dpkg --print-architecture in an existing device terminal. iphoneos-arm matches Rootful, iphoneos-arm64 matches Rootless, and iphoneos-arm64e matches RootHide. The current AsterHand targets are iOS 14+ for Rootful and iOS 15+ for Rootless/RootHide; target compatibility is not a guarantee for every jailbreak.</p><a class="inline-link" href="#ios" data-i18n="faq.iosLink">See the iOS installation guide</a></details><details><summary data-i18n="faq.q4">Where are the source and release files?</summary><p data-i18n="faq.a4">Source and platform documentation are on GitHub. Available client installers are in the main project's Releases. Original AsterHand code has no open-source license grant; third-party notices and licenses remain in effect.</p></details></div></section>
-
-    <section class="closing section-shell"><p class="eyebrow">ASTERHAND</p><h2 data-i18n="closing.title">Your devices.<br>Working together.</h2><div><a class="button button-primary" href="#platforms"><span data-i18n="hero.download">Get AsterHand</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/yaroslav830/AsterHand"><span data-i18n="closing.github">Explore the project</span> ↗</a></div></section>
   </main>
   <footer class="site-footer section-shell"><a class="brand" href="#"><img src="asterhand-mark.svg" alt="" width="26" height="26"><span>AsterHand</span></a><p data-i18n="footer.tagline">Cross-device Root control. Local device agents.</p><div><a href="#ios" data-i18n="footer.repo">iOS installation</a><a href="#mcp">MCP</a><a href="https://github.com/yaroslav830/AsterHand">GitHub ↗</a></div><span class="footer-version" data-i18n="footer.version">Build 82 / 1.0 / Windows 0.1 testing</span></footer>
   <noscript><p class="no-script">The English page and all download links work without JavaScript. Enable JavaScript for the Chinese language switch.</p></noscript>

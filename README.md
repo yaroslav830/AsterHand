@@ -24,7 +24,7 @@ AsterHand brings the Root-authorized tools of paired Android and compatible jail
 
 **Build 82 is a preview.** Android and iOS display version 1.0; Windows remains 0.1 testing, macOS 0.1.4 and Linux 0.1.0. Individual tools depend on the operating system and receiver permissions.
 
-![AsterHand on Windows, Linux, macOS, iOS and Android](docs/images/five-platforms-en.jpg)
+![AsterHand cross-device Root control and local Agent with MCP support across five platforms](docs/images/five-platforms-mcp-en.jpg)
 
 Screenshot text has been translated for this English presentation.
 
@@ -39,32 +39,28 @@ Screenshot text has been translated for this English presentation.
 
 Pairing and permissions are separate. Root, ADB, accessibility, screen recording and microphone access remain controlled by the receiving system. Features such as system overlays and continuous voice conversations vary by platform.
 
-## Start in four steps
-
-1. **Install the client.** Select your platform at the top of this page and follow its installation steps.
-2. **Connect AI.** Open **Settings → AI Connection** and complete ChatGPT authorization or enter your OpenAI-compatible HTTPS endpoint and API key. Save, then choose a model under **Model & Reasoning** and send a test message.
-3. **Pair devices.** Enable remote connections on both clients and make sure they can reach each other on the LAN. Search for the device, enter its pairing code or send a request by IP address. On the receiver, verify the request and choose **Allow once**, **Always allow** or **Reject**.
-4. **Run your first task.** Select a project, a conversation and the local or paired execution target. Start with “List the files in this project without changing anything.” Inspect the target screen before sending input. Grant screen and execution permissions on the receiver as needed.
-
-If a device is missing from discovery, check that both clients have remote connections enabled, that the network allows the devices to reach each other and that the apps have local network access. You can disconnect or revoke pairing from the remote connection settings.
-
-Projects and conversations stay on the device. Messages, attachments and required tool results are sent to the selected AI service. A local agent executes tools locally; it does not imply a bundled offline model.
-
 ## Watch it work
 
 ### Product overview · 26 s
 
-![Animated preview of AsterHand](docs/images/asterhand-promo-en.gif)
+<!-- Attach MP4: AsterHand-Five-Platforms-Promo-EN-1080p.mp4 -->
 
 ### One MCP controller, five platforms · 26 s
 
-![Animated preview of the cross-platform MCP demonstration](docs/images/asterhand-mcp-demo-en.gif)
+<!-- Attach MP4: AsterHand-Five-Platforms-MCP-Demo-EN-1080p.mp4 -->
 
 The demonstration presents reviewed real-device screenshots and actual command responses in sequence. The Windows receiver is an isolated instance on the same PC, and Linux runs in VMware.
 
-<a name="download-for-your-platform"></a>
+## Feedback and distribution
 
-## Platform projects
+[Report a bug](https://github.com/yaroslav830/AsterHand/issues) with the client version, OS, device model, reproduction steps and a redacted screenshot. Keep passwords, keys and private conversations out of reports.
+
+Binaries are distributed through Releases, separately from source branches. The AsterHand source repository is public. Publicly visible source is not granted an open-source license; existing third-party licenses and notices remain in force. See [SOURCE_ONLY.md](SOURCE_ONLY.md).
+
+<a name="download-for-your-platform"></a>
+<a name="platform-projects"></a>
+
+## Installation and usage guide
 
 Find all ten client packages in the [build 82 release](https://github.com/yaroslav830/AsterHand/releases/tag/v1.0-build82-monorepo). Download the matching OS, processor or jailbreak environment.
 
@@ -74,7 +70,9 @@ Native desktop workspace, controller, receiver and local tools.
 
 - **Downloads** — [Installer EXE](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-Windows-Setup.exe) · [Portable EXE](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-Windows.exe)
 
-Run `AsterHand-Windows-Setup.exe` for a per-user installation, or keep `AsterHand-Windows.exe` in a folder and run it directly. The native application requires .NET Framework 4.6.2 or newer and targets Windows 7 SP1 and newer. No separate Electron or Node.js installation is required to launch the Windows client.
+1. Verify that Windows is 7 SP1 or newer and .NET Framework 4.6.2 or later is available.
+2. For an installed copy, run `AsterHand-Windows-Setup.exe` and complete the per-user setup. For a portable copy, place `AsterHand-Windows.exe` in its own folder and open it directly.
+3. Open the client, connect your AI service and run a local test. When using Windows as the MCP control center, leave the native client running under the same system user as the agent.
 
 ### macOS
 
@@ -82,9 +80,9 @@ Intel / Apple silicon desktop agent and device tools.
 
 - **Downloads** — [Intel](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.4-macOS-Intel.zip) · [Apple silicon](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.4-macOS-AppleSilicon.zip)
 
-Choose the Intel ZIP for an Intel Mac or the AppleSilicon ZIP for an Apple silicon Mac. Extract the archive and move AsterHand.app to your preferred application folder.
-
-Intel builds target macOS 10.15+ and Apple silicon builds target macOS 11+. These preview builds use ad hoc signing. If macOS requests confirmation, review the app through Privacy & Security. Screen tools require Screen Recording and Accessibility authorization for this app. A changed application signature may require granting access to the new build again.
+1. In **About This Mac**, check the processor. Choose the Intel ZIP for an Intel Mac on macOS 10.15 or later, or the Apple silicon ZIP on macOS 11 or later.
+2. Extract the archive, move `AsterHand.app` into Applications and open it. These preview builds use ad hoc signing. If macOS asks you to review the app, use **Privacy & Security**.
+3. In **Privacy & Security**, grant AsterHand **Screen Recording** for screen viewing and **Accessibility** for input when you use those tools. If the app's signature changes after an update, check the grants for the new copy.
 
 ### Linux
 
@@ -93,7 +91,7 @@ x64 / arm64 desktop workspace and device tools.
 - **Downloads** — [x64 / amd64 DEB](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.0-linux-amd64.deb) · [arm64 DEB](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-0.1.0-linux-arm64.deb)
 - **Requirements** — Compatible Debian/Ubuntu graphical desktop. Tested on Ubuntu 24.04 x64 in VMware.
 
-Use `uname -m` to check your architecture. Choose amd64 for `x86_64` and arm64 for `aarch64`. Run the following commands on a compatible Debian or Ubuntu desktop.
+Open a terminal on a compatible Debian or Ubuntu desktop. Use `uname -m` to check your architecture. Choose amd64 for `x86_64` and arm64 for `aarch64`. Change into the folder containing your downloaded DEB, then install and start the client.
 
 ```sh
 sudo apt install ./AsterHand-0.1.0-linux-amd64.deb
@@ -108,9 +106,9 @@ Mobile agent, paired control and Standard / ADB / Root tools.
 
 - **Downloads** — [APK](https://github.com/yaroslav830/AsterHand/releases/download/v1.0-build82-monorepo/AsterHand-1.0-Android.apk)
 
-Install `AsterHand-1.0-Android.apk` using your system package installer. The minimum build target is Android 6.0, and this APK uses a development signature.
-
-Choose Standard, ADB or Root in the app. Standard-mode screen assistance needs the appropriate accessibility and system permissions. ADB mode requires authorized debugging. For Root mode, approve the request in the device's existing Root manager. You can open the app in Standard mode.
+1. Open `AsterHand-1.0-Android.apk` in the system package installer and finish installation. This APK uses a development signature and targets Android 6.0 or later.
+2. Open AsterHand and choose **Standard**, **ADB** or **Root** under **Settings → Permission level**. Start with Standard. To use its screen assistant, enable AsterHand's Accessibility service in Android settings. Standard-mode gestures require Android 7 or later, and screenshots require Android 11 or later.
+3. For ADB mode, complete authorized debugging from the computer and check the active tier in the app. For Root mode, approve the request in the device's existing Root manager. Enable the local AI screen control or remote screen switch for the workflow you intend to use.
 
 ### iOS
 
@@ -145,7 +143,7 @@ Choose the package that matches the active jailbreak environment.
 | Rootless | `AsterHand-1.0-Rootless.deb` | iOS 15 |
 | RootHide | `AsterHand-1.0-RootHide.deb` | iOS 15 |
 
-Open the matching DEB in your jailbreak package manager and let it resolve dependencies. All three packages declare OpenSSH.
+Open the matching DEB in your jailbreak package manager and let it resolve dependencies. All three packages declare OpenSSH. After installation, open AsterHand on the phone and connect the AI provider. Check **Settings → Permissions and execution** for local Root and AI screen controls. Manage remote screen access under **Remote connections**.
 
 ### MCP
 
@@ -160,7 +158,17 @@ Open the AsterHand desktop control center on Windows, macOS or Linux. MCP reuses
    python scripts/install_asterhand_mcp.py
    ```
 
-3. Start a new Codex conversation and call `devices_list`. Use `device_info` to verify the exact paired device identifier, then inspect the target with `screenshot`. Screen, ADB and Root access are granted by the receiving device owner.
+3. In the same terminal, run `codex mcp list` and check that `asterhand` appears. Keep the desktop client running and start a new Codex conversation so it loads the registered tools.
+4. Start with `devices_list`. Use `device_info` to verify the exact paired device identifier, then inspect the target with `screenshot`. Check the receiver's screen and execution grants before using interactive tools.
+
+If the installer cannot find pnpm automatically, install the locked dependencies and rerun the installer from the same repository root.
+
+```sh
+pnpm --dir mcp install --frozen-lockfile --ignore-scripts
+python scripts/install_asterhand_mcp.py --skip-dependencies
+```
+
+For another MCP client, configure a local stdio server using the absolute path to Node.js as the command and the absolute path to `mcp/server.mjs` as its argument. Set `ASTERHAND_HOME` to the absolute path of this repository.
 
 Start with “List my paired AsterHand devices and tell me which ones are online.”
 
@@ -181,8 +189,28 @@ sha256sum AsterHand-0.1.0-linux-amd64.deb
 
 Minimum versions describe build targets. The release notes describe the tested configurations and preview limitations. Grant only the tool permissions needed on the receiver.
 
-## Feedback and distribution
+### Start in four steps
 
-[Report a bug](https://github.com/yaroslav830/AsterHand/issues) with the client version, OS, device model, reproduction steps and a redacted screenshot. Keep passwords, keys and private conversations out of reports.
+1. **Install the client.** Choose your platform using the buttons at the top of this page. Download the build for your operating system, processor and, on iOS, jailbreak environment. Open AsterHand after installation.
+2. **Connect AI.** Open **Settings → AI connection**. Use ChatGPT sign-in and complete the authorization page, or enter the HTTPS endpoint and API key from your OpenAI-compatible provider. Save your connection. Open **Model and reasoning** to load the available models, select one or enter a model ID, and send a simple test message.
+3. **Create a project and conversation.** Open project management from the main screen, create or select a project, then open a conversation and select an execution target. The attachment button adds an image or file when supported by your model and service. Start locally with “List the files in this project without changing anything.”
+4. **Pair and use another device.** Follow the pairing steps below, then switch the execution target to the paired device. Inspect its screen and confirm the correct receiver before sending input. Open the receiver's permission settings if it needs access to screen tools, ADB or Root.
 
-Binaries are distributed through Releases, separately from source branches. The AsterHand source repository is public. Publicly visible source is not granted an open-source license; existing third-party licenses and notices remain in force. See [SOURCE_ONLY.md](SOURCE_ONLY.md).
+### Pair a phone and a computer
+
+1. Open AsterHand on both devices. Enable remote connections in the device settings and connect both devices to a network where they can reach each other.
+2. On the controller, search for the receiver. If discovery misses it, use the pairing code or enter the receiver's IP address. On the receiving device, review the request and verify the controller's identity.
+3. Choose **Allow once** for a single session or **Always allow** for repeated use. Choose **Deny** if the request is unexpected. Remote connections can be disconnected and pairings can be revoked from the same settings.
+4. Open the paired device and try a screenshot first. Check that its screen matches your intended target. The receiver controls whether screen input, file operations, terminal commands and elevated permissions are available. Review each approval prompt before proceeding.
+
+Projects and conversations stay on the device. The selected AI service receives messages, attachments and required tool results. Stopping a task prevents further work and leaves completed operations in place.
+
+### Troubleshooting
+
+| Symptom | What to check |
+| --- | --- |
+| ChatGPT sign-in or model loading fails | Check the network and account, then reopen the authorization page and select the correct account or workspace. For a compatible API, confirm the HTTPS endpoint, model ID and the key's access to that model. |
+| Another device is missing | Open AsterHand on the receiver, confirm its remote connection service is active and check its network permissions. Verify both devices can reach each other and try the receiver's pairing code or IP. |
+| Pairing succeeds but the screenshot or input fails | Check the receiver's independent screen and execution grants. On macOS, review Screen Recording and Accessibility. On Android, review the selected execution tier and the separate remote screen permission. On iOS, check remote screen permissions under Remote connections. |
+| The service stopped after sleep or a restart | Open AsterHand on the receiver and confirm which services are active. Resume an interrupted task after checking the current device state. |
+| MCP starts but reports no receiver | Keep the desktop control center open under the same OS account as the MCP client. Check the pairing in AsterHand and start a new agent session. |
