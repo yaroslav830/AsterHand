@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b0b">
+  <meta name="theme-color" content="#0b1017">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="AsterHand brings cross-device Root control, local device agents and MCP to Android, jailbroken iOS and Windows.">
   <meta property="og:title" content="AsterHand — Cross-device Root control">
@@ -14,13 +14,13 @@
   <title>AsterHand — Cross-device Root control</title>
   <link rel="canonical" href="https://yaroslav830.github.io/AsterHand/">
   <link rel="icon" href="asterhand-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=apt-theme-1">
   <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="AsterHand home"><img src="asterhand-mark.svg" alt="" width="32" height="32"><span>AsterHand<span class="brand-dot" aria-hidden="true">.</span></span></a>
+    <a class="brand" href="#" aria-label="AsterHand home"><img src="asterhand-mark.svg" alt="" width="32" height="32"><span>AsterHand</span></a>
     <nav class="desktop-nav" id="site-nav" aria-label="Main navigation"><a href="#product" data-i18n="nav.product">Product</a><a href="#platforms" data-i18n="nav.platforms">Platforms</a><a href="#mcp">MCP</a><a href="#guide" data-i18n="nav.guide">Get started</a></nav>
     <div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div><a class="github-link" href="https://github.com/yaroslav830/AsterHand" aria-label="AsterHand on GitHub">GitHub <span aria-hidden="true">↗</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n="nav.menu">Menu</button></div>
   </header>
@@ -44,8 +44,6 @@
         <div class="hero-actions"><a class="button button-primary" href="#platforms"><span data-i18n="hero.download">Get AsterHand</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#demo"><span class="play-icon" aria-hidden="true">▶</span><span data-i18n="hero.demo">See it in action</span></a></div>
       </div>
       <div class="hero-art" role="group" aria-label="AsterHand iOS and Android application screenshots">
-        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
-        <div class="device-tag"><span class="status-pip" aria-hidden="true"></span><span data-i18n="hero.workflow">YOUR DEVICES. ONE WORKFLOW.</span></div>
         <div class="hero-devices">
           <figure class="phone phone-ios"><div class="phone-top"><span>iOS</span><span aria-hidden="true">↗</span></div><img src="assets/ios-agent-en.png" width="846" height="1835" alt="AsterHand iOS local agent screen" fetchpriority="high"></figure>
           <figure class="phone phone-android"><div class="phone-top"><span>ANDROID</span><span class="root-label">ROOT</span></div><img src="assets/android-agent-en.png" width="841" height="1870" alt="AsterHand Android local agent screen" fetchpriority="high"></figure>
@@ -63,7 +61,7 @@
       <div class="section-heading"><p class="eyebrow" data-i18n="product.eyebrow">01 / BUILT AROUND REAL DEVICE TOOLS</p><h2 data-i18n="product.title">The power is on your device.<br>The workflow goes further.</h2><p data-i18n="product.intro">AsterHand connects what your devices can already do. Choose where a task runs, use the tools you authorize, and check the result.</p></div>
       <div class="feature-layout">
         <article class="feature-lead"><div class="feature-symbol" aria-hidden="true">↗</div><div><span class="feature-kicker" data-i18n="product.rootLabel">CROSS-DEVICE ROOT</span><h3 data-i18n="product.rootTitle">Reach the tools<br>behind the screen.</h3><p data-i18n="product.rootBody">Use Root-enabled commands, files and system tools on a paired Android or compatible jailbroken iOS device. Screen viewing and input complete the workflow.</p></div><div class="route"><span>WINDOWS / MCP</span><span class="route-line" aria-hidden="true">⟷</span><span>ANDROID / iOS</span></div></article>
-        <div class="feature-details"><article><span class="feature-number">01</span><div><h3 data-i18n="product.localTitle">An agent, right on the device.</h3><p data-i18n="product.localBody">Keep projects and conversations on your phone or PC. Your selected AI service reasons about the task; the local agent executes through available device tools.</p></div></article><article><span class="feature-number">02</span><div><h3 data-i18n="product.pairTitle">Pair once. Choose your target.</h3><p data-i18n="product.pairBody">Discover devices on a reachable LAN, verify pairing details and approve the connection. Encrypted pairings connect your controllers and receivers.</p></div></article><article><span class="feature-number">03</span><div><h3 data-i18n="product.permissionsTitle">Permissions stay with the receiver.</h3><p data-i18n="product.permissionsBody">Root, ADB, AI screen access and remote screen access have their own grants. Pairing a device does not turn those permissions on.</p></div></article></div>
+        <div class="feature-details"><article><div><h3 data-i18n="product.localTitle">An agent, right on the device.</h3><p data-i18n="product.localBody">Keep projects and conversations on your phone or PC. Your selected AI service reasons about the task; the local agent executes through available device tools.</p></div></article><article><div><h3 data-i18n="product.pairTitle">Pair once. Choose your target.</h3><p data-i18n="product.pairBody">Discover devices on a reachable LAN, verify pairing details and approve the connection. Encrypted pairings connect your controllers and receivers.</p></div></article><article><div><h3 data-i18n="product.permissionsTitle">Permissions stay with the receiver.</h3><p data-i18n="product.permissionsBody">Root, ADB, AI screen access and remote screen access have their own grants. Pairing a device does not turn those permissions on.</p></div></article></div>
       </div>
       <figure class="product-art"><img id="product-art" src="assets/five-platforms-mcp-en.jpg" alt="AsterHand local device Agent and MCP support across Windows, macOS, Linux, iOS and Android" width="1672" height="876" loading="lazy" decoding="async"></figure>
     </section>
@@ -75,7 +73,7 @@
 
     <section class="mcp-section section-shell section-space">
       <div class="mcp-copy"><p class="eyebrow" data-i18n="mcp.eyebrow">ASTERHAND MCP</p><h2 data-i18n="mcp.title">Give your assistant<br>a device toolkit.</h2><p data-i18n="mcp.body">Connect Codex or another MCP-compatible assistant to your paired devices. Inspect a screen, work with files and terminals, or delegate a task to the phone agent.</p><div class="mcp-note"><span class="mono">22</span><span data-i18n="mcp.count">MCP tools · existing receiver permissions</span></div></div>
-      <div class="mcp-panel"><div class="panel-bar"><span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>ASTERHAND / MCP</span><span data-i18n="mcp.example">EXAMPLE REQUEST</span></div><div class="assistant-request"><span class="request-icon" aria-hidden="true">✳</span><p data-i18n="mcp.prompt">“Find my paired phone, inspect its screen, then list the files in my project.”</p></div><ol class="tool-flow"><li><span class="tool-dot" aria-hidden="true"></span><code>devices_list</code><span data-i18n="mcp.step1">Select the exact paired device</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>screenshot</code><span data-i18n="mcp.step2">Inspect the current screen</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>files / terminal</code><span data-i18n="mcp.step3">Use the tools the receiver permits</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>device agent</code><span data-i18n="mcp.step4">Delegate and follow task progress</span></li></ol></div>
+      <div class="mcp-panel"><div class="panel-bar"><span>ASTERHAND / MCP</span><span data-i18n="mcp.example">EXAMPLE REQUEST</span></div><div class="assistant-request"><span class="request-icon" aria-hidden="true">✳</span><p data-i18n="mcp.prompt">“Find my paired phone, inspect its screen, then list the files in my project.”</p></div><ol class="tool-flow"><li><span class="tool-dot" aria-hidden="true"></span><code>devices_list</code><span data-i18n="mcp.step1">Select the exact paired device</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>screenshot</code><span data-i18n="mcp.step2">Inspect the current screen</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>files / terminal</code><span data-i18n="mcp.step3">Use the tools the receiver permits</span></li><li><span class="tool-dot" aria-hidden="true"></span><code>device agent</code><span data-i18n="mcp.step4">Delegate and follow task progress</span></li></ol></div>
 
     </section>
 
