@@ -1,0 +1,4 @@
+"NSLocalNetworkUsageDescription" = "同じ LAN の AsterHand を検索し、画面、ターミナルとファイルを操作します。";
+"NSMicrophoneUsageDescription" = "自分で開始した音声会話で質問やタスクを文字化します。終了すると収音を停止します。";
+"NSSpeechRecognitionUsageDescription" = "発話を文字に変換して選択した AI に送ります。可能なら本機で認識し、それ以外は Apple が処理します。";
+"NSSiriUsageDescription" = "追加した Siri ショートカットでアプリを開き、音声会話やタスク進捗の読上げを開始します。";

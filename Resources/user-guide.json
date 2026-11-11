@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "steps": [
+    {
+      "title": "欢迎使用 AsterHand",
+      "icon": "glow",
+      "symbol": "sparkles",
+      "text": "把 AI 助手放进口袋：对话、处理项目文件、运行命令，也能在授权后操作手机和连接其他设备。",
+      "tip": "接下来用 5 个步骤了解基本用法。你可以随时跳过，在“设置 → 使用指南”重新查看。"
+    },
+    {
+      "title": "先连接你的 AI",
+      "icon": "link",
+      "symbol": "link",
+      "text": "打开“设置 → AI 连接”，选择 ChatGPT 登录或通用 API。完成授权，或填写自己的 API Key 与 HTTPS API 地址并保存。",
+      "tip": "再到“模型与推理”选择可用模型和思考深度。服务商、账号和模型决定可用能力。",
+      "iosImage": "Guide/ios-settings.jpg",
+      "androidImage": "guide/android-settings.jpg"
+    },
+    {
+      "title": "发送第一个任务",
+      "icon": "chat",
+      "symbol": "bubble.left.and.bubble.right",
+      "text": "在首页输入任务并发送，例如“介绍一下你能帮我做什么”。点击左上角管理项目和对话，点击加号添加图片或文件。",
+      "tip": "每段对话有独立上下文。建议把不同工作放到各自的项目中，再逐步尝试文件与命令工具。",
+      "androidImage": "guide/android-home.jpg"
+    },
+    {
+      "title": "按需要开启权限",
+      "icon": "shield",
+      "symbol": "checkmark.shield",
+      "iosText": "在“设置 → 权限与执行”查看 Root、AI 屏幕控制和自动执行选项。先阅读具体操作，再选择批准或拒绝。",
+      "androidText": "在“设置 → 权限等级”选择普通用户、ADB 或 Root。屏幕操作还需要相应的系统授权，并在设置中开启 AI 屏幕控制。",
+      "tip": "先从普通对话和项目文件开始，需要时再授权。引导中的“下一步”只翻页，不会授予任何权限。",
+      "iosImage": "Guide/ios-permission.jpg",
+      "androidImage": "guide/android-permission.jpg"
+    },
+    {
+      "title": "准备好，开始使用",
+      "icon": "phone",
+      "symbol": "hand.wave",
+      "text": "悬浮窗让你在其他 App 中查看任务；连续语音支持边说边聊；远程连接可以配对手机和电脑。",
+      "tip": "完整的功能介绍、操作路径和常见问题都在“设置 → 使用指南”。现在可以去连接 AI，或直接进入首页。",
+      "iosImage": "Guide/ios-overlay.jpg"
+    }
+  ],
+  "topics": [
+    {
+      "id": "connect",
+      "title": "连接 AI 与选择模型",
+      "icon": "link",
+      "symbol": "link",
+      "paragraphs": [
+        "路径：设置 → AI 连接。ChatGPT 方式需要在授权页面完成登录；通用 API 需要你自己的 API Key，可填写 HTTPS 兼容服务地址。",
+        "保存连接后，在“模型与推理”获取或选择模型，也可填写自定义模型 ID。先发送一条简单消息，确认能收到回复，再尝试工具和附件。",
+        "登录失败时，检查网络和账户状态，再使用“重新选择账户或工作区”。模型不可用时，检查服务地址、模型 ID 和账号权限。"
+      ],
+      "iosImage": "Guide/ios-settings.jpg",
+      "androidImage": "guide/android-settings.jpg"
+    },
+    {
+      "id": "chat",
+      "title": "项目、对话与附件",
+      "icon": "folder",
+      "symbol": "folder",
+      "paragraphs": [
+        "从首页左上角进入项目与对话管理，创建项目后再新建对话。项目用于整理工作目录和任务；不同对话保留各自上下文。",
+        "首页输入任务，点击发送。通过加号选择图片或文件，确认附件后一起发送。附件支持范围取决于所选模型和服务商。",
+        "任务运行时查看进度，遇到问题按提示回答；需要中止时点击停止。停止不会撤销已经完成的文件修改或命令。删除项目默认保留文件，删除前请检查选项。"
+      ],
+      "androidImage": "guide/android-home.jpg"
+    },
+    {
+      "id": "permission",
+      "title": "工具、权限与屏幕操作",
+      "icon": "shield",
+      "symbol": "checkmark.shield",
+      "paragraphs": [
+        "AI 可按当前权限读取或修改文件、运行命令，并在获准后截图、点击、滑动和输入。涉及执行或授权时，先阅读操作内容，再点选批准或拒绝。",
+        "自动允许操作与 Root、ADB、屏幕权限分别管理。只有需要时才开启相应选项；远程设备也遵循接收端的执行等级和授权。"
+      ],
+      "iosParagraphs": [
+        "iPhone 路径：设置 → 权限与执行。Root 和 AI 屏幕控制都有独立开关；远程屏幕权限在远程连接中管理。联网受限时，可在应用提供的网络授权页面检查状态。"
+      ],
+      "androidParagraphs": [
+        "Android 路径：设置 → 权限等级。普通用户使用应用自身身份；ADB 需先由电脑激活；Root 需在 Root 管理器单独授权。页面中的检查按钮可验证实际权限。",
+        "普通用户屏幕助手需要在系统中启用 AsterHand 辅助功能。手势需要 Android 7 及以上，截图需要 Android 11 及以上；ADB 与 Root 的能力取决于系统。AI 屏幕控制和远程屏幕操作还各有独立开关。"
+      ],
+      "iosImage": "Guide/ios-permission.jpg",
+      "androidImage": "guide/android-permission.jpg"
+    },
+    {
+      "id": "overlay",
+      "title": "悬浮窗与状态胶囊",
+      "icon": "phone",
+      "symbol": "circle.inset.filled",
+      "paragraphs": [
+        "在设置中打开悬浮窗，拖动悬浮按钮调整位置，点击展开菜单。在其他 App 中也能发消息、查看问题、停止或继续任务、进入语音。",
+        "状态胶囊显示任务和语音状态，可拖动或在设置中固定到顶部。按钮文字被省略时，长按可查看完整文字与说明。灯效与触感可以在设置中调整。"
+      ],
+      "androidParagraphs": [
+        "Android 需要先允许“显示在其他应用上层”。若已隐藏悬浮窗，可回到 AsterHand 设置重新打开。"
+      ],
+      "iosImage": "Guide/ios-overlay.jpg"
+    },
+    {
+      "id": "voice",
+      "title": "连续语音与独立静音",
+      "icon": "mic",
+      "symbol": "mic",
+      "paragraphs": [
+        "从首页麦克风按钮或悬浮菜单进入连续语音，允许麦克风和系统要求的语音权限后开始。说完停顿会发送，AI 回复后继续聆听；也可手动发送这句或打断朗读。",
+        "麦克风静音和朗读静音分别控制。识别语言独立于界面语言。无回应默认 5 秒自动结束，可在语音设置修改；AI 思考与朗读时暂停计时。"
+      ]
+    },
+    {
+      "id": "remote",
+      "title": "配对手机和电脑",
+      "icon": "link",
+      "symbol": "desktopcomputer",
+      "paragraphs": [
+        "在“设置 → 远程连接”启用连接，让两台设备处于可互通网络。搜索设备，或使用配对码、IP 发起申请，并在接收端核对设备和配对信息。",
+        "接收端选择允许一次、始终允许或拒绝。配对后可打开屏幕、发送触控和文字，或使用远程文件与终端；具体能力取决于接收端授权。",
+        "无法发现时，检查两端服务是否开启、网络是否互通及系统网络权限。断开或撤销连接可在远程连接页面操作。"
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "本地与远程终端",
+      "icon": "terminal",
+      "symbol": "terminal",
+      "paragraphs": [
+        "终端可运行命令并持续查看输出。先确认目标设备、当前目录和执行权限，再输入命令；远程终端需要先配对目标设备。",
+        "命令会实际修改目标设备。结束任务或关闭终端不会自动还原已经执行的操作；工具链是否可用取决于该设备安装的软件。"
+      ],
+      "iosParagraphs": [
+        "iPhone 的本地入口在“设置 → 远程连接 → 本地终端”；选择已配对设备后也可打开它的远程终端。"
+      ],
+      "androidParagraphs": [
+        "Android 的本地入口在“设置 → 终端”，远程终端在已配对设备页面。当前为持续 shell，会保留目录和变量，部分全屏交互程序不适用。"
+      ]
+    },
+    {
+      "id": "recovery",
+      "title": "后台、通知与服务恢复",
+      "icon": "bell",
+      "symbol": "bell",
+      "paragraphs": [
+        "按需要开启后台运行和通知，以便查看任务问题及连接申请。系统省电、强行停止或重启仍可能中断服务，返回应用后检查实际状态。",
+        "连接或悬浮窗异常时，可使用“重启所有服务”。这会停止当前任务和语音，恢复已开启的服务；保留项目、登录和配对，任务需手动继续。"
+      ],
+      "iosParagraphs": [
+        "iPhone 的服务恢复入口位于“设置 → 高级 → 服务、诊断与日志”。"
+      ],
+      "androidParagraphs": [
+        "Android 的入口位于“设置 → 重启所有服务”。辅助功能被系统关闭时，需回系统页面重新允许；ADB 服务退出后需由电脑重新激活。"
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "数据与隐私",
+      "icon": "shield",
+      "symbol": "hand.raised",
+      "paragraphs": [
+        "项目与对话在本机保存。发送消息或附件时，内容会交给所选 AI 服务商处理；请按需选择要发送的内容。",
+        "AsterHand 无需序列号，也不进行定期联网验证。设置、项目管理、终端和已配对设备的连接不依赖授权服务器；AI 请求仍需要所选服务可达。"
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "遇到问题先看这里",
+      "icon": "glow",
+      "symbol": "questionmark.circle",
+      "paragraphs": [
+        "没有 AI 回复：先检查网络、AI 连接和模型设置，再查看任务详情中的错误。等待批准的问题需要点选当前选项，输入“允许”不会代替授权。",
+        "不能操作屏幕：检查 AI 或远程屏幕开关、当前执行权限和系统授权。不能显示悬浮窗：回设置重新开启，并检查系统是否允许。",
+        "找不到入口：功能主要集中在首页、左上角项目侧栏和设置。使用指南可离线阅读；随时点“重新查看入门引导”重走基本步骤。"
+      ]
+    }
+  ]
+}

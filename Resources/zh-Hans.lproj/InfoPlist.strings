@@ -1,0 +1,4 @@
+"NSLocalNetworkUsageDescription" = "搜索并连接同一局域网内的 AsterHand 设备，用于远程屏幕、终端和文件操作。";
+"NSMicrophoneUsageDescription" = "用于你主动开启的连续语音对话，识别说出的问题和任务；结束语音后停止收音。";
+"NSSpeechRecognitionUsageDescription" = "将你说的话转为文字发送给所选 AI。支持时在本机识别，否则使用 Apple 的语音识别服务。";
+"NSSiriUsageDescription" = "使用你添加的 Siri 快捷指令打开 AsterHand、开始语音对话或朗读任务状态。";

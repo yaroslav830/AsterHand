@@ -1,0 +1,127 @@
+[
+  {
+    "type": "function",
+    "name": "run_shell",
+    "description": "Run a noninteractive shell command locally on the user's jailbroken iPhone. Runs as the app user when Root is off, or UID 0 through the local Root service when Root is on. Each call needs user approval. cwd is the selected workspace. Output combines stdout/stderr and is bounded. Shell access is not confined to the workspace. No persistent background jobs. Ask user before consequential system changes.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "Shell command to run using the active jailbreak environment's path rules."
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "description": "Execution timeout, 1 to 120 seconds."
+        }
+      },
+      "required": [
+        "command",
+        "timeout_seconds"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "read_file",
+    "strict": true,
+    "description": "Read UTF-8 text from a regular file. Relative paths are resolved in the workspace; absolute paths allowed. Returns a byte offset for the next chunk. Maximum 49152 bytes per read.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "Starting byte offset, 0 for beginning."
+        }
+      },
+      "required": [
+        "path",
+        "offset"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "write_file",
+    "strict": true,
+    "description": "Atomically write a UTF-8 text file up to 256 KiB. Existing file is backed up first. Relative paths resolve in workspace; absolute paths allowed. Parent directory must exist. Rejects symlinks and nonregular targets. Shell changes are not automatically backed up.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "content"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "list_directory",
+    "strict": true,
+    "description": "List up to 200 sorted entries of a local directory. Relative paths resolve in workspace; absolute paths allowed.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "list_remote_devices",
+    "description": "List paired AsterHand devices (names and device IDs). Local tools affect this iPhone only. Resolve the intended device before remote operations.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "remote_execute",
+    "description": "Run a tool on an explicitly paired OTHER device. Allowed tools: run_shell, read_file, write_file, list_directory, screen_capture, screen_tap, screen_swipe, screen_type, screen_home. arguments_json is a JSON object matching the tool arguments. Never forward remote_execute. Capture and inspect before clicking. Do not use this to bypass a rejection.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "device_id": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        },
+        "arguments_json": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_id",
+        "tool",
+        "arguments_json"
+      ],
+      "additionalProperties": false
+    }
+  }
+]
