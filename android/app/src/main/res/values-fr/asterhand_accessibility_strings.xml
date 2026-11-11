@@ -1,0 +1,3 @@
+<resources>
+ <string name="asterhand_accessibility_description">Les tâches IA ou distantes que vous lancez peuvent capturer, toucher, balayer et remplir les champs ordinaires. Accès écran uniquement sur demande de tâche. Aucun mot de passe lu ni passage automatique vers ADB ou Root.</string>
+</resources>

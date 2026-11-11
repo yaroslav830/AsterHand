@@ -1,0 +1,33 @@
+{
+  "github_repository": "yaroslav830/AsterHand",
+  "base_url": "https://yaroslav830.github.io/AsterHand/ios-apt/",
+  "signing_fingerprint": "457D056969DE0D9DB31C0259025BDCAD4FDCD88C",
+  "lanes": {
+    "rootful": {
+      "label": "Bingner / Elucubratus",
+      "base_url": "https://apt.bingner.com/",
+      "suite": "dists/ios/1443.00/",
+      "index": "main/binary-iphoneos-arm/Packages.bz2",
+      "keyring": "keys/elucubratus.gpg",
+      "fingerprint": "059EC28D89BDD56E901AF7ABD53E862A1F6FFFB5",
+      "external": {"dpkg": "Provided by the existing jailbreak bootstrap", "firmware": "Device firmware pseudo-package"}
+    },
+    "rootless": {
+      "label": "Procursus stable iOS 15 baseline",
+      "base_url": "https://apt.procurs.us/",
+      "suite": "dists/1800/",
+      "index": "main/binary-iphoneos-arm64/Packages.xz",
+      "keyring": "keys/procursus.gpg",
+      "fingerprint": "C59F3798A305ADD7E7E6C7256430292CF9551B0E",
+      "external": {"firmware": "Device firmware pseudo-package"}
+    },
+    "roothide": {
+      "label": "RootHide Procursus stable iOS 15 baseline",
+      "github_repository": "roothide/roothide.github.io",
+      "github_path": "procursus/",
+      "suite": "dists/iphoneos-arm64e/1800/",
+      "index": "main/binary-iphoneos-arm64e/Packages.xz",
+      "external": {"roothide": "Provided by the existing RootHide bootstrap", "firmware": "Device firmware pseudo-package"}
+    }
+  }
+}

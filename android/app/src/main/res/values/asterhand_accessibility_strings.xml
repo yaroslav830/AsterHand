@@ -1,0 +1,3 @@
+<resources>
+ <string name="asterhand_accessibility_description">由你发起的 AI 或远程屏幕任务可截图、点击、滑动及填写普通输入框。只在任务请求时访问屏幕，不读取密码，也不会为普通权限自动升级为 ADB 或 Root。</string>
+</resources>

@@ -1,0 +1,3 @@
+<resources>
+ <string name="asterhand_accessibility_description">自分で開始した AI や遠隔タスクで撮影、タップ、スワイプと通常の入力欄を操作します。要求時のみ画面にアクセスし、パスワードは読みません。ADB や Root へ自動昇格しません。</string>
+</resources>

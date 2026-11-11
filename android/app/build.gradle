@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.pocketagent'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.pocketagent'
+        minSdk 23
+        targetSdk 35
+        versionCode 82
+        versionName '1.0'
+    }
+}

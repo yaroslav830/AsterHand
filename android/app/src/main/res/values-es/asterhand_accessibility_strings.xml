@@ -1,0 +1,3 @@
+<resources>
+ <string name="asterhand_accessibility_description">Las tareas de IA o control remoto que inicias pueden capturar pantalla, tocar, deslizar y rellenar campos normales. Solo acceden a pantalla al solicitarlo la tarea. No leen contraseñas ni elevan automáticamente a ADB o Root.</string>
+</resources>

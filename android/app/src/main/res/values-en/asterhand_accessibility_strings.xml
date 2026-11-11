@@ -1,0 +1,3 @@
+<resources>
+ <string name="asterhand_accessibility_description">AI or remote screen tasks you start can take screenshots, tap, swipe and fill ordinary text fields. Screen access occurs only on task request. Passwords are not read. Standard access never automatically escalates to ADB or Root.</string>
+</resources>
