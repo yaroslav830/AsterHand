@@ -21,35 +21,71 @@ const translations = {
   'demo.rootLabel':'CODEX + MCP / 五平台验证','demo.rootTitle':'一个控制端，五个平台。',
   'demo.rootBody':'同一 Windows 控制端通过 MCP 连接 Windows、Linux、macOS、iOS、Android。Windows 为同机隔离接收端，Linux 运行在 VMware。',
   'demo.recording':'画面采用审核后的设备截图，并依次呈现实际命令返回结果。英文展示版的截图文字已翻译为英文。',
-  'demo.fallback':'单独打开视频 ↗','demo.overviewLabel':'认识 ASTERHAND',
+  'demo.overviewLabel':'认识 ASTERHAND',
   'demo.overviewTitle':'用一个短片，了解 AsterHand。','demo.overviewBody':'五个平台共享设备协议，提供本机 Agent 与 MCP 工具。',
-  'platform.eyebrow':'03 / 选择你的平台','platform.title':'从手边的设备开始。','platform.intro':'原生客户端、共用设备协议，以及 MCP 桥接。为你的设备选择合适的工具。',
-  'platform.androidBadge':'1.0 · 预览版','platform.android':'提供 Standard、ADB、Root 执行模式，以及屏幕工具、终端和本机 Agent。',
-  'platform.androidNote':'当前 APK 使用开发／调试签名。','platform.androidDownload':'下载 APK',
-  'platform.source':'源码与环境要求 ↗','platform.ios':'面向兼容越狱设备的 Root 工具，提供 Rootful、Rootless、RootHide 三种安装包。',
-  'platform.iosNote':'按越狱环境选择 DEB；签名 APT 软件源正在迁移。','platform.iosDownload':'iOS 安装说明','platform.deb':'DEB 下载与发布说明 ↗',
-  'platform.windowsBadge':'0.1 · 测试版','platform.windows':'原生 Windows 控制端，连接已配对手机，并提供本机桌面 Agent 与设备工具。',
-  'platform.windowsNote':'安装版和便携版原生 EXE，目前为测试版本。','platform.windowsDownload':'下载 Windows 版',
-  'platform.desktopBadge':'预览版','platform.releases':'构建与发布说明','platform.mac':'桌面 Agent、屏幕、文件与终端。','platform.macNote':'Intel：macOS 10.15+ · Apple 芯片：macOS 11+','platform.linux':'桌面工作区和远程设备工具，已在 VMware Ubuntu 24.04 验证。','platform.linuxNote':'x64 和 arm64 · DEB 安装包',
   'mcp.eyebrow':'04 / ASTERHAND MCP','mcp.title':'给 AI 助手，<br>一套设备工具。',
   'mcp.body':'将 Codex 或其他支持 MCP 的助手连接到已配对设备。查看屏幕、操作文件与终端，或向手机 Agent 委派任务。',
-  'mcp.cta':'了解 AsterHand MCP','mcp.count':'个 MCP 工具 · 遵循接收端既有权限','mcp.example':'请求示例',
+  'mcp.count':'个 MCP 工具 · 遵循接收端既有权限','mcp.example':'请求示例',
   'mcp.prompt':'“找到我已配对的手机，查看屏幕，再列出项目里的文件。”',
   'mcp.step1':'选定准确的已配对设备','mcp.step2':'检查当前屏幕','mcp.step3':'使用接收端允许的工具','mcp.step4':'委派任务并跟进执行进度',
-  'mcp.requirements':'源码安装器需要 Node.js 20+。打开 Windows、macOS 或 Linux 控制中心，随后选用已授权的 iOS 或 Android 设备。',
   'guide.eyebrow':'05 / 第一个工作流','guide.title':'几步设置，<br>开始自己的工作流。',
   'guide.s1title':'安装客户端','guide.s1':'选择 Windows、macOS、Linux、Android 或与越狱环境匹配的 iOS 安装包。',
   'guide.downloads':'选择下载 ↑','guide.s2title':'连接自己的 AI 服务','guide.s2':'打开设置 → AI 连接。自行完成登录，或填写自己的 API 地址与密钥，选择模型后发送简单消息测试。',
   'guide.s3title':'授权设备工具','guide.s3':'在接收设备上按需启用 Root、ADB 和屏幕能力，各项能力仍遵循系统的独立授权。',
-  'guide.s4title':'配对、检查、执行','guide.s4':'在可互通的局域网中启用远程连接，核对并批准配对。选定目标，先查看屏幕，再执行已授权的任务并核对结果。',
-  'guide.example':'可以从这个请求开始：“列出这个项目里的文件，不修改任何内容。”','guide.full':'阅读完整使用指南 ↗',
+  'guide.s4title':'配对、检查、执行',
+  'guide.example':'可以从这个请求开始：“列出这个项目里的文件，不修改任何内容。”',
   'faq.eyebrow':'连接之前，先了解这些','faq.title':'你可能想知道。',
   'faq.q1':'AsterHand 会给设备获取 Root 或越狱吗？','faq.a1':'不会。AsterHand 使用你已经开启并授权的 Root、ADB、越狱辅助服务和屏幕能力，不执行越狱，也不会通过配对获取这些权限。',
   'faq.q2':'“本机 Agent”包含离线 AI 模型吗？','faq.a2':'Agent 在设备上执行工具，模型推理由你选择的 AI 服务提供，应用没有捆绑离线模型。推理所需的消息、附件和工具结果会发送给所选服务。',
   'faq.q3':'应该选择哪个 iOS 安装包？','faq.a3':'在设备已有终端中执行 dpkg --print-architecture。iphoneos-arm 对应 Rootful，iphoneos-arm64 对应 Rootless，iphoneos-arm64e 对应 RootHide。当前 AsterHand 最低目标为 Rootful iOS 14+、Rootless／RootHide iOS 15+，最低目标不代表已验证所有越狱组合。',
-  'faq.iosLink':'打开各越狱环境的安装指南 ↗','faq.q4':'在哪里获取源码和发布文件？','faq.a4':'源码与各平台文档位于 GitHub，可用客户端安装包在主项目的 Releases 中。AsterHand 原创代码未授予开源许可；第三方声明与许可证继续有效。',
+  'faq.q4':'在哪里获取源码和发布文件？','faq.a4':'源码与各平台文档位于 GitHub，可用客户端安装包在主项目的 Releases 中。AsterHand 原创代码未授予开源许可；第三方声明与许可证继续有效。',
   'closing.title':'让你的设备，<br>共同完成任务。','closing.github':'浏览主项目',
-  'footer.tagline':'跨设备 Root 控制，本机 Agent 协同。','footer.repo':'iOS 安装说明','footer.version':'Build 82 / 1.0 / Windows 0.1 测试版'
+  'footer.tagline':'跨设备 Root 控制，本机 Agent 协同。','footer.repo':'iOS 安装说明','footer.version':'Build 82 / 1.0 / Windows 0.1 测试版',
+  "ios.aptTitle": "通过签名软件源安装",
+  "ios.apt1": "在设备终端执行 <code>dpkg --print-architecture</code>，确认当前越狱环境。",
+  "ios.apt2": "在 Sileo 或 Zebra 打开「软件源 → 添加软件源」，粘贴下方对应地址。",
+  "ios.apt3": "刷新软件源，搜索 AsterHand，核对安装队列后确认。以后在包管理器内刷新检查更新。",
+  "ios.procursus": "Procursus Rootful 保留引导环境自带的 OpenSSH，添加统一 AsterHand 软件源 <code>https://yaroslav830.github.io/AsterHand/ios-apt/</code>。",
+  "windows.requirements": "0.1 测试版 · Windows 7 SP1 或更高版本 · .NET Framework 4.6.2 或更高版本",
+  "windows.install1": "运行 <code>AsterHand-Windows-Setup.exe</code> 为当前用户安装。使用便携版时，将 <code>AsterHand-Windows.exe</code> 保存到文件夹后直接运行。",
+  "windows.install2": "打开 AsterHand，在设置中配置 AI 连接，再到「远程连接」发现并配对接收设备。",
+  "windows.installer": "下载安装版",
+  "windows.portable": "下载便携版 EXE",
+  "macos.requirements": "0.1.4 预览版 · Intel：macOS 10.15+ · Apple 芯片：macOS 11+",
+  "macos.install1": "按 Mac 的处理器选择 ZIP。解压后将 <code>AsterHand.app</code> 移到「应用程序」并打开。",
+  "macos.install2": "预览版使用临时签名。若 macOS 要求核对应用，请进入「系统设置 → 隐私与安全性」。查看和控制屏幕时，按需授予屏幕录制及辅助功能权限。更新后可能需要重新授权。",
+  "macos.intel": "下载 Intel ZIP",
+  "macos.apple": "下载 Apple 芯片 ZIP",
+  "linux.filename": "arm64 设备请在第一条命令中使用 <code>AsterHand-0.1.0-linux-arm64.deb</code>。",
+  "linux.requirements": "0.1.0 预览版 · Debian／Ubuntu 图形桌面 · amd64 或 arm64",
+  "linux.install1": "运行 <code>uname -m</code> 查看处理器架构。<code>x86_64</code> 选 amd64，<code>aarch64</code> 选 arm64。",
+  "linux.install2": "使用包管理器安装 DEB，或在下载目录执行下方命令。以普通用户启动图形界面。",
+  "linux.install3": "X11 本机输入依赖 <code>xdotool</code>。Wayland 目前不支持本机输入注入，截图可能需要在系统对话框选择共享内容。已配对手机使用手机自身的输入权限。",
+  "linux.amd64": "下载 amd64 DEB",
+  "linux.arm64": "下载 arm64 DEB",
+  "android.requirements": "1.0 预览版 · 最低构建目标 Android 6.0 · 开发签名 APK",
+  "android.install1": "下载 <code>AsterHand-1.0-Android.apk</code>，用 Android 系统安装器打开。",
+  "android.install2": "在 AsterHand 选择普通用户、ADB 或 Root 模式。普通模式需对应的屏幕和辅助功能权限。ADB 需要调试授权。Root 模式请在设备已有的 Root 管理器中批准。",
+  "android.apk": "下载 APK",
+  "ios.requirements": "1.0 预览版 · 需要兼容越狱 · Rootful iOS 14+ · Rootless 和 RootHide iOS 15+",
+  "ios.install1": "手动安装时，选择与当前越狱环境匹配的 DEB。在包管理器打开并核对安装队列。安装包声明依赖 OpenSSH。",
+  "ios.install2": "打开 AsterHand，配置 AI 连接，并按需启用屏幕与 Root 权限。",
+  "ios.rootful": "下载 Rootful DEB",
+  "ios.rootless": "下载 Rootless DEB",
+  "ios.roothide": "下载 RootHide DEB",
+  "verify.title": "校验安装包",
+  "verify.intro": "运行与你的系统对应的命令，并对照校验文件中的同名条目。",
+  "verify.download": "下载 SHA256SUMS.txt",
+  "platform.eyebrow": "03 / 平台安装引导",
+  "platform.title": "安装 AsterHand",
+  "platform.intro": "查看适用于你设备的下载、系统要求和安装步骤。",
+  "mcp.installTitle": "配置 AsterHand MCP",
+  "mcp.install1": "在 Windows、macOS 或 Linux 上保持 AsterHand 控制中心运行。配对准备使用的 Android 或 iOS 设备。",
+  "mcp.install2": "准备 Node.js 20+、Python 3.11+、pnpm 和 Codex CLI。在 AsterHand 仓库根目录打开终端，执行下方命令。",
+  "mcp.install3": "安装器注册 <code>asterhand</code> 后，打开新的 Codex 对话。请它调用 <code>devices_list</code>，选定确切的已配对设备，并在发送输入前查看屏幕。操作后在设备上核对结果。",
+  "mcp.installNote": "MCP 使用桌面应用的本机连接和已有配对。Root、ADB 和屏幕工具仍需接收端授权。",
+  "faq.iosLink": "查看本页 iOS 安装引导",
+  "guide.s4": "搜索接收设备，或输入配对码、IP 地址。在接收端核对设备身份，选择允许一次、始终允许或拒绝。配对后选中该设备，先查看屏幕，再在执行任务后核对结果。",
 };
 const english = new Map();
 for (const element of document.querySelectorAll('[data-i18n]')) {
@@ -73,6 +109,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();
 function setLanguage(language,updateURL=false){
   const chinese=language==='zh';
   document.documentElement.lang=chinese?'zh-CN':'en';
+  document.querySelector('.platform-nav').setAttribute('aria-label',chinese?translations['nav.platforms']:'Platforms');
   for(const element of document.querySelectorAll('[data-i18n]')){
     const key=element.dataset.i18n;
     element.innerHTML=chinese?translations[key]:english.get(key);
@@ -80,14 +117,12 @@ function setLanguage(language,updateURL=false){
   for(const button of document.querySelectorAll('[data-language]'))button.setAttribute('aria-pressed',String(button.dataset.language===language));
   document.title=chinese?'AsterHand — 跨设备 Root 控制与本机 Agent':'AsterHand — Cross-device Root control';
   document.querySelector('meta[name="description"]').content=chinese?'AsterHand 为 Android、越狱 iOS 和 Windows 提供跨设备 Root 控制、本机 Agent 与 MCP 集成。':'AsterHand brings cross-device Root control, local device agents and MCP to Android, jailbroken iOS and Windows.';
-  document.getElementById('guide-link').href=chinese?'https://github.com/yaroslav830/AsterHand/blob/main/README.zh-CN.md#四步开始':'https://github.com/yaroslav830/AsterHand#start-in-four-steps';
   for(const kind of ['root','overview']){
     const video=document.getElementById(kind+'-video');
     const source=video.querySelector('source');
     const requested=videoSources[language][kind];
     if(source.getAttribute('src')!==requested){video.pause();source.setAttribute('src',requested);video.load();}
     video.setAttribute('aria-label',chinese?(kind==='root'?'五平台 MCP 演示':'AsterHand 产品介绍'):(kind==='root'?'Five-platform MCP demonstration':'AsterHand product overview'));
-    document.getElementById(kind+'-video-fallback').href=requested;
   }
   try{localStorage.setItem('asterhand-website-language',language);}catch{}
   if(updateURL){
