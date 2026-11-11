@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>local.pocketagent.remote</string>
+  <key>UserName</key><string>mobile</string>
+  <key>GroupName</key><string>mobile</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Applications/PocketCodex.app/pocketremote</string>
+    <string>-b</string><string>0.0.0.0</string>
+    <string>-p</string><string>5907</string>
+    <string>-n</string><string>AsterHand iPhone</string>
+    <string>-s</string><string>0.5</string>
+    <string>-F</string><string>20</string>
+    <string>-H</string><string>0</string>
+    <string>-B</string><string>off</string>
+    <string>-T</string><string>off</string>
+    <string>-C</string><string>on</string>
+    <string>-e</string><string>/var/mobile/Library/PocketCodexRemote/server.pem</string>
+    <string>-k</string><string>/var/mobile/Library/PocketCodexRemote/server-key.pem</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>POCKET_REMOTE_DIRECTORY</key><string>/var/mobile/Library/PocketCodexRemote</string>
+    <key>_MSSafeMode</key><string>1</string>
+    <key>_SafeMode</key><string>1</string>
+    <key>HOME</key><string>/var/mobile</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ProcessType</key><string>Interactive</string>
+  <key>StandardOutPath</key><string>/var/mobile/Library/PocketCodexRemote/remote.log</string>
+  <key>StandardErrorPath</key><string>/var/mobile/Library/PocketCodexRemote/remote.log</string>
+</dict>
+</plist>

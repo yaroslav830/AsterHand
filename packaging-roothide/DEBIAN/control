@@ -1,0 +1,12 @@
+Package: local.pocketcodex
+Name: AsterHand (RootHide)
+Version: 1.0
+Architecture: iphoneos-arm64e
+Description: Native RootHide on-device coding agent with multiple AI providers.
+ Includes local iPhone execution and a paired desktop remote-control helper.
+Maintainer: Local Developer <local@localhost>
+Author: Local Developer
+Section: Development
+Tag: roothide::compatible
+Depends: firmware (>= 15.0), dash, uikittools, roothide, openssh
+

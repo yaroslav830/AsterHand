@@ -1,0 +1,52 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+app='/Applications/PocketCodex.app'
+maint="$app/pocketmaint"
+launch='/bin/launchctl'
+labels='local.agentgo.agent local.agentgo.control local.pocketagent.remote local.pocketagent.root local.pocketagent.screen local.pocketagent.overlay local.asterhand.recovery'
+set -e
+if [ "$1" != configure ]; then exit 0; fi
+for directory in PocketCodexRemote PocketAgentControl AgentGoControl AgentGoTasks; do
+    mkdir -p "/var/mobile/Library/$directory"
+    chown mobile:mobile "/var/mobile/Library/$directory"
+    chmod 0700 "/var/mobile/Library/$directory"
+done
+mkdir -p '/var/pr'
+chown root:wheel '/var/pr'
+chmod 0711 '/var/pr'
+if [ ! -f /var/mobile/Library/PocketAgentControl/state.json ]; then
+    printf '{"enabled":true,"visibility_request":"initial","haptic_style":"system"}\n' > /var/mobile/Library/PocketAgentControl/state.json
+    chown mobile:mobile /var/mobile/Library/PocketAgentControl/state.json
+    chmod 0600 /var/mobile/Library/PocketAgentControl/state.json
+fi
+if [ ! -f /var/mobile/Library/PocketCodexRemote/remote-settings.json ]; then
+    printf '{"auto_approve":false,"trusted_hosts":[]}\n' > /var/mobile/Library/PocketCodexRemote/remote-settings.json
+    chown mobile:mobile /var/mobile/Library/PocketCodexRemote/remote-settings.json
+    chmod 0600 /var/mobile/Library/PocketCodexRemote/remote-settings.json
+fi
+log=/var/mobile/Library/PocketAgentControl/install.log
+printf 'AsterHand configure begin\n' > "$log"
+chown mobile:mobile "$log"
+chmod 0600 "$log"
+for label in $labels; do "$launch" disable "system/$label" >/dev/null 2>&1 || true; done
+"$maint" stop || true
+for label in $labels; do "$launch" bootout "system/$label" >/dev/null 2>&1 || true; done
+"$maint" stop || true
+if ! "$maint" recover-configure >>"$log" 2>&1; then
+    tail -n 12 "$log"
+    exit 1
+fi
+if ! "$maint" run 30 '/usr/bin/uicache' -p "$app" >>"$log" 2>&1; then
+    tail -n 12 "$log"
+    exit 1
+fi
+for label in $labels; do
+    "$launch" enable "system/$label" >>"$log" 2>&1 || true
+    if ! "$maint" run 12 "$launch" bootstrap system '/Library/LaunchDaemons/'"$label.plist" >>"$log" 2>&1; then
+        tail -n 12 "$log"
+        exit 1
+    fi
+done
+printf 'AsterHand configure complete\n' >> "$log"
+exit 0

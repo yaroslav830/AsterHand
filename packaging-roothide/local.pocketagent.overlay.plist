@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>local.pocketagent.overlay</string>
+  <key>UserName</key><string>root</string>
+  <key>GroupName</key><string>wheel</string>
+  <key>ProgramArguments</key><array><string>/Applications/PocketCodex.app/pocketoverlay</string></array>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ProcessType</key><string>Interactive</string>
+  <key>JetsamProperties</key><dict><key>MemoryLimit</key><integer>256</integer></dict>
+  <key>EnvironmentVariables</key><dict>
+    <key>DISABLE_TWEAKS</key><string>1</string>
+    <key>_MSSafeMode</key><string>1</string>
+    <key>_SafeMode</key><string>1</string>
+    <key>HOME</key><string>/var/mobile</string>
+  </dict>
+  <key>StandardOutPath</key><string>/var/mobile/Library/PocketAgentControl/overlay.log</string>
+  <key>StandardErrorPath</key><string>/var/mobile/Library/PocketAgentControl/overlay.log</string>
+</dict></plist>

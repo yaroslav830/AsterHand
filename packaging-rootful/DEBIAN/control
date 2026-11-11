@@ -1,0 +1,10 @@
+Package: local.pocketcodex
+Name: AsterHand (Rootful)
+Version: 1.0
+Architecture: iphoneos-arm
+Description: On-device AI agent for traditional rootful jailbreaks on iOS 14+.
+ Includes remote control, terminal, floating controls and direct AI connections.
+Maintainer: Local Developer <local@localhost>
+Author: Local Developer
+Section: Development
+Depends: firmware (>= 14.0), uikittools, openssh

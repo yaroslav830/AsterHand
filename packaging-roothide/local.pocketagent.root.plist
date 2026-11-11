@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>local.pocketagent.root</string>
+  <key>UserName</key><string>root</string>
+  <key>GroupName</key><string>wheel</string>
+  <key>ProgramArguments</key><array><string>/Applications/PocketCodex.app/PocketCodex</string><string>--root-daemon</string></array>
+  <key>EnvironmentVariables</key><dict>
+    <key>_MSSafeMode</key><string>1</string>
+    <key>_SafeMode</key><string>1</string>
+    <key>HOME</key><string>/var/root</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>StandardOutPath</key><string>/var/pr/root.log</string>
+  <key>StandardErrorPath</key><string>/var/pr/root.log</string>
+</dict></plist>

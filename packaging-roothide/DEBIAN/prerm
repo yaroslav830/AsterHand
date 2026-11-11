@@ -1,0 +1,20 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+app='/Applications/PocketCodex.app'
+maint="$app/pocketmaint"
+launch='/bin/launchctl'
+labels='local.agentgo.agent local.agentgo.control local.pocketagent.remote local.pocketagent.root local.pocketagent.screen local.pocketagent.overlay local.asterhand.recovery'
+case "$1" in
+    remove|upgrade|deconfigure)
+for label in $labels; do "$launch" disable "system/$label" >/dev/null 2>&1 || true; done
+"$maint" stop || true
+for label in $labels; do "$launch" bootout "system/$label" >/dev/null 2>&1 || true; done
+"$maint" stop || true
+        if [ "$1" = remove ]; then
+            "$maint" cleanup || true
+            "$maint" run 20 '/usr/bin/uicache' -u "$app" || true
+        fi
+        ;;
+esac
+exit 0

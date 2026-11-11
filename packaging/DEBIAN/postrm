@@ -1,0 +1,16 @@
+#!/var/jb/bin/sh
+PATH=/var/jb/usr/bin:/var/jb/bin:/var/jb/usr/sbin:/var/jb/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+app='/var/jb/Applications/PocketCodex.app'
+maint="$app/pocketmaint"
+launch='/var/jb/usr/bin/launchctl'
+labels='local.agentgo.agent local.agentgo.control local.pocketagent.remote local.pocketagent.root local.pocketagent.screen local.pocketagent.overlay local.asterhand.recovery'
+if [ "$1" = remove ] || [ "$1" = purge ]; then
+    for label in $labels; do "$launch" bootout "system/$label" >/dev/null 2>&1 || true; done
+    # Fixed application-owned directory only; never traverse a user workspace.
+    case "$app" in
+        /var/jb/Applications/PocketCodex.app) rm -rf "$app" ;;
+        *) exit 1 ;;
+    esac
+fi
+exit 0

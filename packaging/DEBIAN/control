@@ -1,0 +1,12 @@
+Package: local.pocketcodex
+Name: AsterHand
+Version: 1.0
+Architecture: iphoneos-arm64
+Description: Independent on-device agent with remote control and terminal.
+ Native iPhone shell, screen and file tools for rootless iOS 15+.
+ This is not the official OpenAI Codex CLI.
+Maintainer: Local Developer <local@localhost>
+Author: Local Developer
+Section: Development
+Depends: firmware (>= 15.0), dash, uikittools, openssh
+
