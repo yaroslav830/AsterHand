@@ -1,0 +1,49 @@
+name: Deploy AsterHand official website
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - 'docs/images/**'
+      - 'scripts/build_asterhand_website.py'
+      - '.github/workflows/website.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: asterhand-website-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'yaroslav830/AsterHand'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          submodules: false
+      - name: Build the public website
+        run: python3 scripts/build_asterhand_website.py --output build/website
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: build/website
+          retention-days: 1
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy official website
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
