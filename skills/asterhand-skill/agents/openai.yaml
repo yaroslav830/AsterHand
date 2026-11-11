@@ -1,0 +1,9 @@
+interface:
+  display_name: "AsterHand 远程控制"
+  short_description: "通过 AsterHand MCP 操作设备，先核对目标与屏幕，再执行任务、验证结果和清理会话"
+  default_prompt: "使用 $asterhand-skill 的操作规范，优先通过 AsterHand MCP 查看设备和当前状态，再完成我的任务。"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "asterhand"
+      description: "Local AsterHand MCP connection, using the existing receiver permissions and pairings."

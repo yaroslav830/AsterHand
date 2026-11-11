@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {once} from 'node:events';
+import {ControlHub} from '../desktop/control-core.mjs';
+import {seal,open,sealFrame,openFrame} from '../desktop/control-wire.mjs';
+import {ControlAgent} from '../desktop/control-agent.mjs';
+const root=path.resolve(import.meta.dirname,'../diagnostics');fs.mkdirSync(root,{recursive:true});const directory=fs.mkdtempSync(path.join(root,'control-test-'));
+const a=new ControlHub(path.join(directory,'a'),{port:0,bind:'127.0.0.1',work:directory});
+const b=new ControlHub(path.join(directory,'b'),{port:0,bind:'127.0.0.1',work:directory});
+const wait=ms=>new Promise(r=>setTimeout(r,ms));const results={};
+try{
+ await Promise.all([once(a.server,'listening'),once(b.server,'listening')]);
+ assert.equal((await fetch(`http://127.0.0.1:${b.port}/rpc`,{method:'POST',body:'{}'})).status,403);results.default_denies=true;
+ await b.importInvite(a.createInvite('127.0.0.1'));b.state.enabled=true;b.save();const id=a.state.peers[0].id,key=a.state.peers[0].key;
+ assert.equal((await a.request(id,'info')).platform,process.platform);assert.equal((await b.request(id,'info')).platform,process.platform);results.bidirectional_pairing=true;
+ const nonce=crypto.randomUUID(),packet=seal(id,key,{id:nonce,ts:Date.now()/1000,method:'info',args:{}},'req');
+ const post=p=>fetch(`http://127.0.0.1:${b.port}/rpc`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+ const accepted=await post(packet);assert.equal(accepted.status,200);assert.equal(open(await accepted.json(),key,'res').id,nonce);assert.equal((await post(packet)).status,403);results.replay_rejected=true;
+ assert.equal((await post({...packet,mac:Buffer.alloc(32).toString('base64')})).status,403);assert.throws(()=>open(packet,key,'res'));results.tamper_and_reflection_rejected=true;
+ const image=Buffer.from([255,216,1,2,255,217]);const video=sealFrame(key,nonce,1,image,100,200);assert.deepEqual(openFrame(key,nonce,video).jpeg,image);assert.throws(()=>openFrame(key,crypto.randomUUID(),video));const bad=Buffer.from(video);bad[20]^=1;assert.throws(()=>openFrame(key,nonce,bad));results.video_authentication_and_session_binding=true;
+ const session=await a.request(id,'terminal.open',{});assert.ok(session.session);
+ await a.request(id,'terminal.write',{session:session.session,text:process.platform==='win32'?"$agentgoTest = 'AGENTGO_TERMINAL_OK'\n":"agentgoTest=AGENTGO_TERMINAL_OK\n"});
+ await a.request(id,'terminal.write',{session:session.session,text:process.platform==='win32'?"Write-Output $agentgoTest\n":"printf '%s\\n' \"$agentgoTest\"\n"});
+ let output='',offset=0;for(let i=0;i<40;i++){await wait(100);const r=await a.request(id,'terminal.read',{session:session.session,offset});offset=r.next_offset;output+=r.output;if(output.includes('AGENTGO_TERMINAL_OK'))break;}assert.match(output,/AGENTGO_TERMINAL_OK/);results.terminal_state_persists=true;
+ assert.throws(()=>b.terminal('read',{session:session.session},'wrong-owner'));results.terminal_owner_isolation=true;
+ await a.request(id,'terminal.close',{session:session.session});
+ let calls=0;const agent=new ControlAgent(a,async()=>++calls===1?{status:'completed',output:[{type:'function_call',name:'list_directory',arguments:'{"path":"."}',call_id:'test-call'}]}:{status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'MOCK_AGENT_OK'}]}]});
+ agent.start({model:'mock-model',message:'list target directory',key:'mock-key',target:id});for(let i=0;i<20&&!agent.view().pending;i++)await wait(20);assert.ok(agent.view().pending);agent.approve(agent.view().pending.id,true);for(let i=0;i<40&&agent.view().running;i++)await wait(20);assert.ok(agent.view().events.some(x=>x.text==='MOCK_AGENT_OK'));results.mock_agent_remote_tool_loop=true;
+ b.revoke(id);await assert.rejects(a.request(id,'info'));results.revoked_peer_rejected=true;
+ console.log(JSON.stringify(results,null,2));fs.writeFileSync(path.join(root,'control-tests.json'),JSON.stringify(results,null,2));
+}finally{await Promise.all([a.close(),b.close()]);}

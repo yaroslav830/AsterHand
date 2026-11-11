@@ -1,0 +1,8 @@
+{
+  "package": "formdata-submitter-polyfill",
+  "version": "1.0.4",
+  "source": "https://registry.npmjs.org/formdata-submitter-polyfill/-/formdata-submitter-polyfill-1.0.4.tgz",
+  "tarball_sha512": "c3b7f10a89a1c5907baba97f1e1e822d6ad6ef1d8c6e16adbfb45bc9c2e890dea673ec55cae5c43ac064d3adcb84cd9cb93b54d7ad4ad461d9e7692981f8eaf5",
+  "upstream": "https://github.com/jenseng/formdata-submitter-polyfill",
+  "mode": "full; preserves entry order and handles WebKit 239070"
+}
