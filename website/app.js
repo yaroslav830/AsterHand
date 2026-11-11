@@ -1,0 +1,104 @@
+'use strict';
+
+const translations = {
+  'skip':'跳转到正文',
+  'nav.product':'产品能力','nav.platforms':'平台与下载','nav.guide':'开始使用','nav.menu':'菜单',
+  'hero.release':'ASTERHAND 1.0 现已发布','hero.preview':'Windows · macOS · Linux · iOS · Android',
+  'hero.title1':'跨设备，','hero.title2':'调用 Root<br>真正的能力。',
+  'hero.description':'将手机已授权的 Root 工具带入跨设备工作流。远程操控、本机 Agent，或通过 MCP 连接你的 AI 助手，让设备协同完成任务。',
+  'hero.download':'获取 AsterHand','hero.demo':'观看实际演示','hero.workflow':'你的设备，共同协作。',
+  'hero.paired':'加密配对','hero.caption':'应用实机截图 · 展示标签已处理为英文',
+  'strip.eyebrow':'连接设备，也连接工具','strip.root':'Root 与 ADB','strip.screen':'屏幕操控','strip.terminal':'文件与终端','strip.agent':'本机 Agent',
+  'product.eyebrow':'01 / 围绕真实设备工具构建','product.title':'能力在设备上，<br>协作不止于设备。',
+  'product.intro':'AsterHand 连接设备已有的能力。选择任务执行的位置，使用你授予的工具，并确认每一步的结果。',
+  'product.rootLabel':'跨设备 ROOT 控制','product.rootTitle':'屏幕背后，<br>还有更多工具。',
+  'product.rootBody':'在已配对的 Android 或兼容越狱 iOS 设备上，调用 Root 命令、文件与系统工具，再配合屏幕查看和输入完成操作。',
+  'product.localTitle':'Agent，就在设备上。','product.localBody':'在手机或电脑上管理项目与对话。由你选择的 AI 服务推理，本机 Agent 通过可用的设备工具执行任务。',
+  'product.pairTitle':'完成配对，选择执行目标。','product.pairBody':'在可互通的局域网中发现设备，核对配对信息并确认连接。控制端与接收端通过加密配对协作。',
+  'product.permissionsTitle':'权限始终由接收设备决定。','product.permissionsBody':'Root、ADB、AI 屏幕访问与远程屏幕访问分别授权。配对本身不会开启这些权限。',
+  'demo.eyebrow':'02 / 看见完整工作流','demo.title':'从一句请求，<br>到设备执行结果。',
+  'demo.intro':'产品介绍与五平台 MCP 演示均有中英文版本。',
+  'demo.rootLabel':'CODEX + MCP / 五平台验证','demo.rootTitle':'一个控制端，五个平台。',
+  'demo.rootBody':'同一 Windows 控制端通过 MCP 连接 Windows、Linux、macOS、iOS、Android。Windows 为同机隔离接收端，Linux 运行在 VMware。',
+  'demo.recording':'画面采用审核后的设备截图，并依次呈现实际命令返回结果。英文展示版的截图文字已翻译为英文。',
+  'demo.fallback':'单独打开视频 ↗','demo.overviewLabel':'认识 ASTERHAND',
+  'demo.overviewTitle':'用一个短片，了解 AsterHand。','demo.overviewBody':'五个平台共享设备协议，提供本机 Agent 与 MCP 工具。',
+  'platform.eyebrow':'03 / 选择你的平台','platform.title':'从手边的设备开始。','platform.intro':'原生客户端、共用设备协议，以及 MCP 桥接。为你的设备选择合适的工具。',
+  'platform.androidBadge':'1.0 · 预览版','platform.android':'提供 Standard、ADB、Root 执行模式，以及屏幕工具、终端和本机 Agent。',
+  'platform.androidNote':'当前 APK 使用开发／调试签名。','platform.androidDownload':'下载 APK',
+  'platform.source':'源码与环境要求 ↗','platform.ios':'面向兼容越狱设备的 Root 工具，提供 Rootful、Rootless、RootHide 三种安装包。',
+  'platform.iosNote':'按越狱环境选择 DEB；签名 APT 软件源正在迁移。','platform.iosDownload':'iOS 安装说明','platform.deb':'DEB 下载与发布说明 ↗',
+  'platform.windowsBadge':'0.1 · 测试版','platform.windows':'原生 Windows 控制端，连接已配对手机，并提供本机桌面 Agent 与设备工具。',
+  'platform.windowsNote':'安装版和便携版原生 EXE，目前为测试版本。','platform.windowsDownload':'下载 Windows 版',
+  'platform.desktopBadge':'预览版','platform.releases':'构建与发布说明','platform.mac':'桌面 Agent、屏幕、文件与终端。','platform.macNote':'Intel：macOS 10.15+ · Apple 芯片：macOS 11+','platform.linux':'桌面工作区和远程设备工具，已在 VMware Ubuntu 24.04 验证。','platform.linuxNote':'x64 和 arm64 · DEB 安装包',
+  'mcp.eyebrow':'04 / ASTERHAND MCP','mcp.title':'给 AI 助手，<br>一套设备工具。',
+  'mcp.body':'将 Codex 或其他支持 MCP 的助手连接到已配对设备。查看屏幕、操作文件与终端，或向手机 Agent 委派任务。',
+  'mcp.cta':'了解 AsterHand MCP','mcp.count':'个 MCP 工具 · 遵循接收端既有权限','mcp.example':'请求示例',
+  'mcp.prompt':'“找到我已配对的手机，查看屏幕，再列出项目里的文件。”',
+  'mcp.step1':'选定准确的已配对设备','mcp.step2':'检查当前屏幕','mcp.step3':'使用接收端允许的工具','mcp.step4':'委派任务并跟进执行进度',
+  'mcp.requirements':'源码安装器需要 Node.js 20+。打开 Windows、macOS 或 Linux 控制中心，随后选用已授权的 iOS 或 Android 设备。',
+  'guide.eyebrow':'05 / 第一个工作流','guide.title':'几步设置，<br>开始自己的工作流。',
+  'guide.s1title':'安装客户端','guide.s1':'选择 Windows、macOS、Linux、Android 或与越狱环境匹配的 iOS 安装包。',
+  'guide.downloads':'选择下载 ↑','guide.s2title':'连接自己的 AI 服务','guide.s2':'打开设置 → AI 连接。自行完成登录，或填写自己的 API 地址与密钥，选择模型后发送简单消息测试。',
+  'guide.s3title':'授权设备工具','guide.s3':'在接收设备上按需启用 Root、ADB 和屏幕能力，各项能力仍遵循系统的独立授权。',
+  'guide.s4title':'配对、检查、执行','guide.s4':'在可互通的局域网中启用远程连接，核对并批准配对。选定目标，先查看屏幕，再执行已授权的任务并核对结果。',
+  'guide.example':'可以从这个请求开始：“列出这个项目里的文件，不修改任何内容。”','guide.full':'阅读完整使用指南 ↗',
+  'faq.eyebrow':'连接之前，先了解这些','faq.title':'你可能想知道。',
+  'faq.q1':'AsterHand 会给设备获取 Root 或越狱吗？','faq.a1':'不会。AsterHand 使用你已经开启并授权的 Root、ADB、越狱辅助服务和屏幕能力，不执行越狱，也不会通过配对获取这些权限。',
+  'faq.q2':'“本机 Agent”包含离线 AI 模型吗？','faq.a2':'Agent 在设备上执行工具，模型推理由你选择的 AI 服务提供，应用没有捆绑离线模型。推理所需的消息、附件和工具结果会发送给所选服务。',
+  'faq.q3':'应该选择哪个 iOS 安装包？','faq.a3':'在设备已有终端中执行 dpkg --print-architecture。iphoneos-arm 对应 Rootful，iphoneos-arm64 对应 Rootless，iphoneos-arm64e 对应 RootHide。当前 AsterHand 最低目标为 Rootful iOS 14+、Rootless／RootHide iOS 15+，最低目标不代表已验证所有越狱组合。',
+  'faq.iosLink':'打开各越狱环境的安装指南 ↗','faq.q4':'在哪里获取源码和发布文件？','faq.a4':'源码与各平台文档位于 GitHub，可用客户端安装包在主项目的 Releases 中。AsterHand 原创代码未授予开源许可；第三方声明与许可证继续有效。',
+  'closing.title':'让你的设备，<br>共同完成任务。','closing.github':'浏览主项目',
+  'footer.tagline':'跨设备 Root 控制，本机 Agent 协同。','footer.repo':'iOS 安装说明','footer.version':'Build 82 / 1.0 / Windows 0.1 测试版'
+};
+const english = new Map();
+for (const element of document.querySelectorAll('[data-i18n]')) {
+  const key = element.dataset.i18n;
+  if (!english.has(key)) english.set(key, element.innerHTML);
+}
+const videoSources = {
+  en:{root:'media/AsterHand-Five-Platforms-MCP-Demo-EN-1080p.mp4?v=en-20261104',overview:'media/AsterHand-Five-Platforms-Promo-EN-1080p.mp4?v=en-20261104'},
+  zh:{root:'media/AsterHand-Five-Platforms-MCP-Demo-ZH-1080p.mp4',overview:'media/AsterHand-Five-Platforms-Promo-ZH-1080p.mp4'}
+};
+const header = document.querySelector('.site-header');
+const menu = document.querySelector('.menu-button');
+function closeMenu(){ header.classList.remove('menu-open'); menu.setAttribute('aria-expanded','false'); }
+menu.addEventListener('click',()=>{
+  const open=header.classList.toggle('menu-open');
+  menu.setAttribute('aria-expanded',String(open));
+});
+for(const link of document.querySelectorAll('#site-nav a'))link.addEventListener('click',closeMenu);
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
+
+function setLanguage(language,updateURL=false){
+  const chinese=language==='zh';
+  document.documentElement.lang=chinese?'zh-CN':'en';
+  for(const element of document.querySelectorAll('[data-i18n]')){
+    const key=element.dataset.i18n;
+    element.innerHTML=chinese?translations[key]:english.get(key);
+  }
+  for(const button of document.querySelectorAll('[data-language]'))button.setAttribute('aria-pressed',String(button.dataset.language===language));
+  document.title=chinese?'AsterHand — 跨设备 Root 控制与本机 Agent':'AsterHand — Cross-device Root control';
+  document.querySelector('meta[name="description"]').content=chinese?'AsterHand 为 Android、越狱 iOS 和 Windows 提供跨设备 Root 控制、本机 Agent 与 MCP 集成。':'AsterHand brings cross-device Root control, local device agents and MCP to Android, jailbroken iOS and Windows.';
+  document.getElementById('guide-link').href=chinese?'https://github.com/yaroslav830/AsterHand/blob/main/README.zh-CN.md#四步开始':'https://github.com/yaroslav830/AsterHand#start-in-four-steps';
+  for(const kind of ['root','overview']){
+    const video=document.getElementById(kind+'-video');
+    const source=video.querySelector('source');
+    const requested=videoSources[language][kind];
+    if(source.getAttribute('src')!==requested){video.pause();source.setAttribute('src',requested);video.load();}
+    video.setAttribute('aria-label',chinese?(kind==='root'?'五平台 MCP 演示':'AsterHand 产品介绍'):(kind==='root'?'Five-platform MCP demonstration':'AsterHand product overview'));
+    document.getElementById(kind+'-video-fallback').href=requested;
+  }
+  try{localStorage.setItem('asterhand-website-language',language);}catch{}
+  if(updateURL){
+    const url=new URL(location.href);
+    if(chinese)url.searchParams.set('lang','zh');else url.searchParams.delete('lang');
+    history.replaceState(null,'',url);
+  }
+}
+for(const button of document.querySelectorAll('[data-language]'))button.addEventListener('click',()=>setLanguage(button.dataset.language,true));
+let initial='en';
+try{if(localStorage.getItem('asterhand-website-language')==='zh')initial='zh';}catch{}
+const requested=new URLSearchParams(location.search).get('lang');
+if(requested==='zh'||requested==='en')initial=requested;
+setLanguage(initial);

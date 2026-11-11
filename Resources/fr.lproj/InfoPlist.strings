@@ -1,0 +1,4 @@
+"NSLocalNetworkUsageDescription" = "Rechercher et connecter les appareils AsterHand du réseau local pour écran, terminal et fichiers.";
+"NSMicrophoneUsageDescription" = "Pour les conversations vocales que vous lancez. Convertit questions et tâches en texte ; l’écoute cesse à la fin.";
+"NSSpeechRecognitionUsageDescription" = "Convertit votre parole en texte pour l’IA choisie. Reconnaissance locale si disponible, sinon traitée par Apple.";
+"NSSiriUsageDescription" = "Utilisez vos raccourcis Siri pour ouvrir AsterHand, lancer la voix ou lire l’état des tâches.";

@@ -1,0 +1,4 @@
+"NSLocalNetworkUsageDescription" = "Discover and connect to AsterHand devices on your local network for screen, terminal and file operations.";
+"NSMicrophoneUsageDescription" = "Used for voice conversations you start. Converts spoken questions and tasks to text; listening stops when you end voice.";
+"NSSpeechRecognitionUsageDescription" = "Converts your speech to text for the selected AI. Recognition is on-device when available, otherwise handled by Apple.";
+"NSSiriUsageDescription" = "Use shortcuts you add to open AsterHand, start voice conversations or read task status.";

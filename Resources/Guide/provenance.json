@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-31",
+  "language": "en",
+  "sources": {
+    "android": "Xiaomi Mi 11 / M2011K2C",
+    "ios": "iPhone 14 Pro"
+  },
+  "content": "Actual device screenshots of AsterHand. Android shows only a newly created public tutorial example. iPhone shows settings, permissions and overlay preferences. No account pages, keys, pairing codes or private conversations are included.",
+  "images": [
+    "android-settings",
+    "android-home",
+    "android-permission",
+    "ios-settings",
+    "ios-permission",
+    "ios-overlay"
+  ]
+}

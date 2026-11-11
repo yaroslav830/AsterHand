@@ -1,0 +1,88 @@
+{
+  "project": "AsterHand",
+  "version": "1.0",
+  "build": 82,
+  "layout": "single-repository",
+  "release": "https://github.com/yaroslav830/AsterHand/releases/tag/v1.0-build82-monorepo",
+  "projects": [
+    {
+      "name": "Windows",
+      "repository": "yaroslav830/AsterHand",
+      "url": "https://github.com/yaroslav830/AsterHand/tree/main/desktop/windows",
+      "component": "windows",
+      "status": "preview",
+      "version": "0.1",
+      "build": 82,
+      "visibility": "public",
+      "path": "desktop/windows",
+      "guide": "docs/platforms/windows.md",
+      "guide_zh": "docs/platforms/windows.zh-CN.md"
+    },
+    {
+      "name": "macOS",
+      "repository": "yaroslav830/AsterHand",
+      "url": "https://github.com/yaroslav830/AsterHand/tree/main/desktop/macos",
+      "component": "macos",
+      "status": "preview",
+      "version": "0.1.4",
+      "build": 82,
+      "visibility": "public",
+      "path": "desktop/macos",
+      "guide": "docs/platforms/macos.md",
+      "guide_zh": "docs/platforms/macos.zh-CN.md"
+    },
+    {
+      "name": "Linux",
+      "repository": "yaroslav830/AsterHand",
+      "url": "https://github.com/yaroslav830/AsterHand/tree/main/desktop/linux",
+      "component": "linux",
+      "status": "preview",
+      "version": "0.1.0",
+      "build": 82,
+      "visibility": "public",
+      "path": "desktop/linux",
+      "guide": "docs/platforms/linux.md",
+      "guide_zh": "docs/platforms/linux.zh-CN.md"
+    },
+    {
+      "name": "Android",
+      "repository": "yaroslav830/AsterHand",
+      "url": "https://github.com/yaroslav830/AsterHand/tree/main/android",
+      "component": "android",
+      "status": "preview",
+      "version": "1.0",
+      "build": 82,
+      "visibility": "public",
+      "path": "android",
+      "guide": "docs/platforms/android.md",
+      "guide_zh": "docs/platforms/android.zh-CN.md"
+    },
+    {
+      "name": "iOS",
+      "repository": "yaroslav830/AsterHand",
+      "url": "https://github.com/yaroslav830/AsterHand/tree/main/Sources",
+      "component": "ios",
+      "status": "preview",
+      "version": "1.0",
+      "build": 82,
+      "visibility": "public",
+      "path": "Sources",
+      "guide": "docs/platforms/ios.md",
+      "guide_zh": "docs/platforms/ios.zh-CN.md"
+    },
+    {
+      "name": "MCP",
+      "repository": "yaroslav830/AsterHand",
+      "url": "https://github.com/yaroslav830/AsterHand/tree/main/mcp",
+      "component": "mcp",
+      "status": "source",
+      "version": "1.0",
+      "build": 82,
+      "visibility": "public",
+      "path": "mcp",
+      "guide": "docs/platforms/mcp.md",
+      "guide_zh": "docs/platforms/mcp.zh-CN.md"
+    }
+  ],
+  "repository": "yaroslav830/AsterHand"
+}

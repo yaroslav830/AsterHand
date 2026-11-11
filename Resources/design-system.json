@@ -1,0 +1,21 @@
+{
+  "name": "AsterHand",
+  "version": 1,
+  "font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', 'Microsoft YaHei', sans-serif",
+  "radii": { "control": 12, "card": 20, "composer": 24 },
+  "spacing": { "unit": 4, "page": 20, "row": 16, "section": 24 },
+  "light": {
+    "canvas": "#fafaf9", "surface": "#ffffff", "soft": "#f0f0ee", "sidebar": "#f4f4f2",
+    "text": "#202020", "muted": "#696964", "subtle": "#777772", "border": "#e4e4e0",
+    "accent": "#202020", "onAccent": "#ffffff", "selected": "#e9e9e5",
+    "success": "#237858", "danger": "#ba3f3f", "dangerSoft": "#fff0ef",
+    "warning": "#8b6120", "warningSoft": "#fff5df", "focus": "#202020"
+  },
+  "dark": {
+    "canvas": "#141414", "surface": "#1e1e1e", "soft": "#282828", "sidebar": "#191919",
+    "text": "#f4f4f0", "muted": "#a3a3a0", "subtle": "#969693", "border": "#353535",
+    "accent": "#f4f4f0", "onAccent": "#141414", "selected": "#303030",
+    "success": "#7dcda9", "danger": "#f38989", "dangerSoft": "#382323",
+    "warning": "#e8b96a", "warningSoft": "#352d1f", "focus": "#f4f4f0"
+  }
+}
