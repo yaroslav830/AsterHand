@@ -36,6 +36,8 @@ const translations = {
   'faq.q4':'在哪里获取源码和发布文件？','faq.a4':'源码与各平台文档位于 GitHub，可用客户端安装包在主项目的 Releases 中。AsterHand 原创代码未授予开源许可；第三方声明与许可证继续有效。',
   'closing.title':'让你的设备，<br>共同完成任务。','closing.github':'浏览主项目',
   'footer.tagline':'跨设备 Root 控制，本机 Agent 协同。','footer.repo':'iOS 安装说明','footer.version':'Build 82 / 1.0 / Windows 0.1 测试版',
+  "nav.apt": "iOS 软件源",
+  "ios.openApt": "打开 iOS 软件源",
   "ios.aptTitle": "通过签名软件源安装",
   "ios.apt1": "在设备终端执行 <code>dpkg --print-architecture</code>，确认当前越狱环境。",
   "ios.apt2": "在 Sileo 或 Zebra 打开「软件源 → 添加软件源」，粘贴下方对应地址。",
